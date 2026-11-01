@@ -1,0 +1,107 @@
+{
+ "name": "System Design",
+ "category": "SYSTEM_DESIGN",
+ "description": "Build large-scale systems: scaling, storage, caching and trade-offs.",
+ "weight": 15,
+ "sortOrder": 6,
+ "topics": [
+  {
+   "name": "System Design Fundamentals",
+   "estHours": 8,
+   "articles": [
+    {
+     "title": "System design: a complete walkthrough",
+     "content": "## How to approach a system design interview\n1. **Clarify requirements.** Functional (what the system does) and non-functional (scale, latency, availability, consistency).\n2. **Estimate the scale.** Users, requests per second, storage per year, read/write ratio.\n3. **Define the API and data model.**\n4. **Draw the high-level design**, then go deeper into the parts that matter.\n5. **Discuss trade-offs** and failure cases.\n\n## Scaling basics\n- **Vertical scaling**: a bigger machine. Simple, but has a ceiling and is a single point of failure.\n- **Horizontal scaling**: more machines behind a **load balancer**. Needs stateless servers (store sessions in a shared cache or database).\n- Load balancing algorithms: round robin, least connections, IP hash.\n\n## Data layer\n- **SQL vs NoSQL**: SQL for structured data and transactions; NoSQL (key-value, document, wide-column) for huge scale and flexible schema.\n- **Replication**: leader plus followers. Reads go to followers, writes to the leader. Gives availability and read scale.\n- **Sharding (partitioning)**: split data across databases by a key (user id, hash). Beware hot shards and cross-shard joins.\n- **CAP theorem**: during a network partition you must choose between **consistency** and **availability**. Many systems pick eventual consistency.\n\n## Speed and reliability\n- **Caching** at the browser, CDN, application (Redis) and database levels.\n- **CDN**: serves static files from servers close to the user.\n- **Message queues** (Kafka, RabbitMQ): decouple services and smooth traffic spikes; consumers process work asynchronously.\n- **Rate limiting** protects the system (token bucket, sliding window).\n- **Monitoring**: metrics, logs, alerts. Plan for retries, timeouts and graceful degradation.\n\n## Worked example: URL shortener\n- Requirements: create short link, redirect, 100M new URLs per month, redirects much more frequent than creates (about 100:1).\n- Estimate: ~40 writes/s and ~4,000 reads/s. Storing 100M records a month at ~500 bytes is ~50 GB a month.\n- API: `POST /shorten {url}` returns `{code}`; `GET /{code}` returns a 301/302 redirect.\n- Short code: base62 of a unique id (7 characters give 62^7, about 3.5 trillion codes). Ids come from a counter service or a pre-generated key range per server.\n- Storage: key-value store `code -> long_url`, sharded by code.\n- Speed: cache hot codes in Redis; most traffic is served from cache.\n- Extras: expiry dates, analytics via a queue, rate limit per user, replicas in several regions.",
+     "type": "SYSTEM_DESIGN"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Horizontal scaling means:",
+     "options": [
+      "Adding more powerful hardware to one server",
+      "Adding more machines to share the load",
+      "Adding more database indexes",
+      "Compressing data"
+     ],
+     "answer": 1,
+     "explanation": "Vertical scaling upgrades one machine; horizontal adds more machines.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "The CAP theorem says that during a network partition a system must choose between:",
+     "options": [
+      "Speed and cost",
+      "Consistency and availability",
+      "Security and privacy",
+      "Latency and throughput"
+     ],
+     "answer": 1,
+     "explanation": "Partition tolerance is required, so you trade C against A.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "What is the main job of a load balancer?",
+     "options": [
+      "Store user sessions",
+      "Distribute incoming requests across servers",
+      "Encrypt the database",
+      "Generate unique ids"
+     ],
+     "answer": 1,
+     "explanation": "It spreads traffic and removes unhealthy servers from rotation.",
+     "difficulty": "EASY"
+    }
+   ]
+  },
+  {
+   "name": "Caching, Databases & Queues",
+   "estHours": 6,
+   "articles": [
+    {
+     "title": "Caching, sharding and message queues",
+     "content": "## Caching strategies\n- **Cache-aside**: the app checks the cache first; on a miss it reads the database and fills the cache. Most common.\n- **Write-through**: write to the cache and the database together. **Write-back**: write to the cache and flush later (faster, riskier).\n- **Eviction**: LRU (least recently used), LFU (least frequently used), TTL (expire after a time).\n- Beware of stale data and the *cache stampede* (many requests rebuilding the same key at once).\n\n## Sharding and consistent hashing\nSimple `hash(key) % N` moves almost every key when N changes. **Consistent hashing** places servers and keys on a ring, so adding or removing a server moves only a small share of the keys.\n\n## Message queues\nProducers publish messages, consumers process them later. Benefits: decoupling, buffering traffic spikes, retries, and asynchronous work such as sending emails. Delivery guarantees: at-most-once, at-least-once (needs idempotent consumers), exactly-once (hard).",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "In the cache-aside pattern, what happens on a cache miss?",
+     "options": [
+      "The request fails",
+      "The app reads from the database and then updates the cache",
+      "The cache is deleted",
+      "The database is bypassed forever"
+     ],
+     "answer": 1,
+     "explanation": "The application loads the data and stores it in the cache for next time.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "What is the main advantage of consistent hashing?",
+     "options": [
+      "It encrypts keys",
+      "Few keys move when servers are added or removed",
+      "It removes the need for replicas",
+      "It sorts the data"
+     ],
+     "answer": 1,
+     "explanation": "Only a small fraction of keys are remapped.",
+     "difficulty": "MEDIUM"
+    },
+    {
+     "q": "A message queue between two services mainly helps to:",
+     "options": [
+      "Decouple them and absorb traffic spikes",
+      "Make queries return instantly",
+      "Replace the database",
+      "Remove the need for logging"
+     ],
+     "answer": 0,
+     "explanation": "Producers and consumers work at their own pace.",
+     "difficulty": "EASY"
+    }
+   ]
+  }
+ ]
+}

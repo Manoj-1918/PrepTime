@@ -1,0 +1,468 @@
+{
+"name": "DBMS",
+"category": "CORE",
+"description": "Relational algebra, SQL optimization, database normalization, and transaction processing.",
+"weight": 10,
+"sortOrder": 2,
+"topics": [
+{
+"name": "SQL & Joins",
+"estHours": 4,
+"articles": [
+{
+"title": "Relational Query Execution & Joining Strategies",
+"content": "## Logical Order of Execution in SQL\n`FROM` / `JOIN` $\to$ `WHERE` $\to$ `GROUP BY` $\to$ `HAVING` $\to$ `SELECT` $\to$ `DISTINCT` $\to$ `ORDER BY` $\to$ `LIMIT / OFFSET`.\n\n## Relational Joins\n- **INNER JOIN**: Returns records having matching keys in both tables.\n- **LEFT (OUTER) JOIN**: Returns all records from left table and matched rows from right table (`NULL` for unmatched).\n- **RIGHT (OUTER) JOIN**: Mirror image of Left Join.\n- **FULL (OUTER) JOIN**: Union of Left and Right Joins.\n- **CROSS JOIN**: Cartesian product of two tables ($N \times M$ rows).\n\n## Aggregate & Window Functions\n- `COUNT(*)` counts total rows; `COUNT(column)` ignores `NULL` values.\n- `WHERE` filters individual rows **before** aggregation.\n- `HAVING` filters aggregated group output **after** `GROUP BY` execution.\n- **Window Functions**: `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()` compute dynamic partitioning over subsets without collapsing rows.\n\n```sql\n-- Second Highest Salary via Subquery\nSELECT MAX(salary) \nFROM Employee \nWHERE salary < (SELECT MAX(salary) FROM Employee);\n```",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "Which type of SQL Join returns all records from the left table even if no matching key exists in the right table?",
+"options": ["INNER JOIN", "LEFT JOIN", "CROSS JOIN", "RIGHT JOIN"],
+"answer": 1,
+"explanation": "LEFT JOIN keeps all rows from the left table, padding unmatched right table attributes with NULL.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the key functional difference between the WHERE clause and the HAVING clause?",
+"options": ["WHERE is faster", "WHERE filters individual rows before grouping, HAVING filters groups after aggregation", "HAVING only works on numeric strings", "There is no functional difference"],
+"answer": 1,
+"explanation": "WHERE filters input rows before GROUP BY evaluation, while HAVING operates on grouped aggregate results.",
+"difficulty": "EASY"
+},
+{
+"q": "How does `COUNT(column_name)` behave when encountering NULL values in specified column rows?",
+"options": ["Includes NULLs as 0", "Ignores NULL values completely", "Throws a database runtime error", "Converts NULL to empty string"],
+"answer": 1,
+"explanation": "COUNT(column) skips NULL values in calculation. In contrast, COUNT(*) counts all rows regardless of NULLs.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is the logical execution step performed immediately AFTER the `WHERE` clause in a SQL query?",
+"options": ["SELECT", "HAVING", "GROUP BY", "ORDER BY"],
+"answer": 2,
+"explanation": "Logical query execution sequence is: FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What will be the total number of output rows for a `CROSS JOIN` between Table A ($10$ rows) and Table B ($20$ rows)?",
+"options": ["30", "10", "200", "20"],
+"answer": 2,
+"explanation": "A CROSS JOIN produces a Cartesian product: $10 \times 20 = 200$ rows.",
+"difficulty": "EASY"
+},
+{
+"q": "Which window function assigns unique consecutive integers to rows without leaving gaps, even when values tie?",
+"options": ["RANK()", "DENSE_RANK()", "ROW_NUMBER()", "NTILE()"],
+"answer": 2,
+"explanation": "ROW_NUMBER() strictly assigns unique sequential numbers ($1, 2, 3...$) to each row regardless of duplicates.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is the result of `RANK()` vs `DENSE_RANK()` when two rows tie for the top position?",
+"options": ["RANK gives 1, 1, 3; DENSE_RANK gives 1, 1, 2", "RANK gives 1, 2, 3; DENSE_RANK gives 1, 1, 1", "RANK gives 1, 1, 2; DENSE_RANK gives 1, 1, 3", "Both yield identical numerical sequences"],
+"answer": 0,
+"explanation": "RANK skips rank values after ties (1, 1, 3), whereas DENSE_RANK stays compact without skipping numbers (1, 1, 2).",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which operator is used in SQL subqueries to test for the existence of any rows returned by the subquery?",
+"options": ["IN", "EXISTS", "LIKE", "ANY"],
+"answer": 1,
+"explanation": "EXISTS returns true as soon as the inner subquery returns at least one row, short-circuiting execution.",
+"difficulty": "EASY"
+},
+{
+"q": "In SQL, what value is returned when performing arithmetic on `NULL` (e.g., `5 + NULL`)?",
+"options": ["5", "0", "NULL", "Error"],
+"answer": 2,
+"explanation": "Any algebraic operation involving NULL evaluates to NULL in SQL three-valued logic.",
+"difficulty": "EASY"
+},
+{
+"q": "Which keyword is used to eliminate duplicate output rows from a SQL query result set?",
+"options": ["UNIQUE", "DISTINCT", "GROUP BY", "UNION ALL"],
+"answer": 1,
+"explanation": "SELECT DISTINCT strips duplicate tuples from the output relation.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the key difference between `UNION` and `UNION ALL` in SQL?",
+"options": ["UNION ALL removes duplicates; UNION keeps duplicates", "UNION removes duplicate rows; UNION ALL keeps all rows", "UNION works on strings; UNION ALL works on numbers", "UNION ALL is slower than UNION"],
+"answer": 1,
+"explanation": "UNION performs duplicate suppression across sets, making it slower than UNION ALL, which simply appends sets.",
+"difficulty": "EASY"
+},
+{
+"q": "Which SQL clause restricts the output of aggregate results?",
+"options": ["WHERE", "ORDER BY", "HAVING", "LIMIT"],
+"answer": 2,
+"explanation": "HAVING applies conditions directly onto aggregated metric outputs produced by GROUP BY.",
+"difficulty": "EASY"
+},
+{
+"q": "A Self-Join is defined as:",
+"options": ["Joining a table to a foreign system", "Joining a table to itself", "Joining three tables simultaneously", "Joining temporary views"],
+"answer": 1,
+"explanation": "A Self-Join joins a table to itself using distinct table aliases (e.g., matching employees to managers in one table).",
+"difficulty": "EASY"
+},
+{
+"q": "What SQL constraint ensures that all values in a column are distinct and non-null?",
+"options": ["FOREIGN KEY", "UNIQUE", "PRIMARY KEY", "CHECK"],
+"answer": 2,
+"explanation": "A PRIMARY KEY uniquely identifies each tuple and implicitly enforces both UNIQUE and NOT NULL constraints.",
+"difficulty": "EASY"
+},
+{
+"q": "What does the `COALESCE(val1, val2, ...)` function return?",
+"options": ["The maximum non-null value", "The first non-null value in the argument list", "Count of null values", "Average of non-null values"],
+"answer": 1,
+"explanation": "COALESCE evaluates arguments in order and returns the first non-null parameter value.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which wildcard character represents zero or more characters in a standard SQL `LIKE` clause?",
+"options": ["_", "%", "*", "?"],
+"answer": 1,
+"explanation": "'%' matches zero or more characters, while '_' matches exactly one single character.",
+"difficulty": "EASY"
+},
+{
+"q": "What type of key links a column in a child table to the primary key column of a parent table?",
+"options": ["Super Key", "Candidate Key", "Foreign Key", "Composite Key"],
+"answer": 2,
+"explanation": "A Foreign Key establishes referential integrity by referencing a Primary Key in another relation.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the purpose of the SQL `TRUNCATE` command compared to `DELETE`?",
+"options": ["TRUNCATE deletes selective rows with WHERE; DELETE removes all", "TRUNCATE is a DDL command that resets tables faster without logging individual row deletes", "TRUNCATE can be rolled back easily in all engines", "DELETE removes tables from schema entirely"],
+"answer": 1,
+"explanation": "TRUNCATE is DDL; it deallocates data pages instantly, making it faster than row-by-row DML DELETE.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What relational algebra operation corresponds directly to the SQL `SELECT` statement projection of specific columns?",
+"options": ["Selection (σ)", "Projection (π)", "Cartesian Product (×)", "Join (⋈)"],
+"answer": 1,
+"explanation": "Projection ($pi$) selects specific vertical attributes (columns), whereas Selection ($sigma$) filters horizontal tuples (rows).",
+"difficulty": "HARD"
+},
+{
+"q": "Which query correctly finds employees earning more than the average salary?",
+"options": ["SELECT name FROM emp WHERE salary > AVG(salary);", "SELECT name FROM emp HAVING salary > AVG(salary);", "SELECT name FROM emp WHERE salary > (SELECT AVG(salary) FROM emp);", "SELECT name FROM emp GROUP BY salary > AVG(salary);"],
+"answer": 2,
+"explanation": "Aggregate functions like `AVG()` cannot appear directly in `WHERE`; a subquery must compute the average scalar first.",
+"difficulty": "MEDIUM"
+}
+]
+},
+{
+"name": "Normalization & ER Modeling",
+"estHours": 4,
+"articles": [
+{
+"title": "Database Schema Design & Normal Forms",
+"content": "## ER Diagram Concepts\n- **Entity Set**: Collection of real-world objects (Strong entity has Primary Key; Weak entity depends on owner entity via Partial Key).\n- **Attributes**: Simple, Composite, Single-valued, Multi-valued (double oval), Derived (dashed oval).\n\n## Keys Definitions\n- **Super Key**: Any set of attributes that uniquely identifies a tuple in a relation.\n- **Candidate Key**: Minimal Super Key (no proper subset is a Super Key).\n- **Primary Key**: Candidate Key chosen by DBA.\n\n## Normal Forms Hierarchy\n1. **1NF**: Atomic attribute values; no repeating groups/arrays.\n2. **2NF**: In 1NF + No **Partial Dependency** (non-prime attributes must fully depend on the entire candidate key).\n3. **3NF**: In 2NF + No **Transitive Dependency** ($X \to Y$ where neither $X$ is a super key nor $Y$ is a prime attribute).\n4. **BCNF (Boyce-Codd NF)**: For every non-trivial functional dependency $X \to Y$, $X$ **must** be a Super Key.",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "What requirement must a database table meet to satisfy First Normal Form (1NF)?",
+"options": ["No transitive dependencies", "All column values must be atomic with no repeating groups", "No partial dependencies", "Must have a composite key"],
+"answer": 1,
+"explanation": "1NF requires domain attributes to hold indivisible atomic values, eliminating arrays or multi-value lists in a single cell.",
+"difficulty": "EASY"
+},
+{
+"q": "A table is in Second Normal Form (2NF) if it is in 1NF and contains no:",
+"options": ["Transitive dependencies", "Partial dependencies", "Multi-valued dependencies", "Foreign keys"],
+"answer": 1,
+"explanation": "2NF eliminates partial dependencies, meaning non-prime attributes must depend on the full candidate key.",
+"difficulty": "EASY"
+},
+{
+"q": "Third Normal Form (3NF) strictly eliminates which type of functional dependency?",
+"options": ["Partial dependency", "Transitive dependency", "Atomic dependency", "Join dependency"],
+"answer": 1,
+"explanation": "3NF requires that non-key attributes do not depend on other non-key attributes (transitive dependency $A \to B \to C$).",
+"difficulty": "EASY"
+},
+{
+"q": "A relation is in BCNF if for every non-trivial functional dependency $X \to Y$, $X$ is a:",
+"options": ["Prime Attribute", "Foreign Key", "Super Key", "Secondary Key"],
+"answer": 2,
+"explanation": "Boyce-Codd Normal Form (BCNF) strictly dictates that the left side ($X$) of every FD must be a Super Key.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is a Candidate Key in relational database design?",
+"options": ["Any key containing NULL values", "A minimal super key containing no redundant attributes", "A key that links two tables", "The first column in a table"],
+"answer": 1,
+"explanation": "A Candidate Key is a minimal Super Key such that removing any attribute destroys uniqueness.",
+"difficulty": "EASY"
+},
+{
+"q": "In an Entity-Relationship (ER) diagram, how are multi-valued attributes visually represented?",
+"options": ["Dashed Ellipse", "Double Ellipse", "Rectangle", "Diamond"],
+"answer": 1,
+"explanation": "Multi-valued attributes (like phone numbers) are represented using double ellipses in standard ER notation.",
+"difficulty": "EASY"
+},
+{
+"q": "What characterizes a Weak Entity Set in ER modeling?",
+"options": ["Has no candidate key and depends on a strong identifying entity", "Has multiple primary keys", "Contains only derived attributes", "Cannot be converted to a table"],
+"answer": 0,
+"explanation": "Weak entity sets lack a primary key of their own and rely on an identifying owner entity set and partial discriminator key.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "If functional dependency $A \to B$ and $B \to C$ holds, then $A \to C$ is derived using Armstrong's axiom of:",
+"options": ["Reflexivity", "Augmentation", "Transitivity", "Decomposition"],
+"answer": 2,
+"explanation": "Transitivity rule states that if $A \to B$ and $B \to C$, then $A \to C$.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the primary goal of database normalization?",
+"options": ["Increase data redundancy to speed up joins", "Minimize data redundancy and prevent update anomalies", "Create extra foreign keys automatically", "Convert relational tables to NoSQL collections"],
+"answer": 1,
+"explanation": "Normalization organizes fields and tables to eliminate insertion, updating, and deletion anomalies while reducing redundancy.",
+"difficulty": "EASY"
+},
+{
+"q": "A prime attribute is defined as an attribute that is:",
+"options": ["A member of any candidate key", "Part of a derived field", "Not in any super key", "Always an integer"],
+"answer": 0,
+"explanation": "Attributes that belong to any candidate key of a relation are designated as prime attributes.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Denormalization is intentionally practiced to achieve:",
+"options": ["Better data integrity", "Improved read/query performance by avoiding heavy joins", "Elimination of foreign keys", "Strict 4NF compliance"],
+"answer": 1,
+"explanation": "Denormalization intentionally re-introduces controlled redundancy to reduce join operations for read-heavy systems.",
+"difficulty": "EASY"
+},
+{
+"q": "How is a derived attribute represented in an ER diagram?",
+"options": ["Solid Rectangle", "Dashed Ellipse", "Double Oval", "Diamond"],
+"answer": 1,
+"explanation": "Derived attributes (e.g., `Age` computed from `DateOfBirth`) are represented by dashed ellipses.",
+"difficulty": "EASY"
+},
+{
+"q": "Which normal form addresses anomalies arising from Multi-Valued Dependencies (MVDs)?",
+"options": ["3NF", "BCNF", "4NF", "5NF"],
+"answer": 2,
+"explanation": "Fourth Normal Form (4NF) ensures independent multi-valued facts are not stored in a single relation.",
+"difficulty": "HARD"
+},
+{
+"q": "Lossless-Join decomposition guarantees that:",
+"options": ["No attributes are lost during join", "Rejoining decomposed tables produces the exact original relation without spurious tuples", "Tables are merged into one column", "Primary keys are deleted"],
+"answer": 1,
+"explanation": "Lossless join decomposition ensures $R_1 \bowtie R_2 = R$, preventing artificial or spurious rows from being created.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Given relation $R(A, B, C)$ with $A \to B$ and $A \to C$. What is the closure of $A$ (denoted $A^+$)?",
+"options": ["{A}", "{A, B}", "{A, B, C}", "{B, C}"],
+"answer": 2,
+"explanation": "Starting with $A$, we can derive $B$ and $C$. Thus attribute closure $A^+ = \\{A, B, C\\}$, making $A$ a Super Key.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What anomaly occurs when deleting a row causes unintended loss of completely unrelated secondary data?",
+"options": ["Insertion Anomaly", "Deletion Anomaly", "Update Anomaly", "Selection Anomaly"],
+"answer": 1,
+"explanation": "Deletion anomaly happens when removing a tuple involuntarily erases other essential data attributes.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the maximum number of Primary Keys a relational table can have?",
+"options": ["0", "1", "2", "Unlimited"],
+"answer": 1,
+"explanation": "A relational table can have multiple Candidate Keys, but at most ONE Primary Key.",
+"difficulty": "EASY"
+},
+{
+"q": "In canonical ER modeling, relationships between entities are drawn using:",
+"options": ["Rectangles", "Diamonds", "Ovals", "Lines only"],
+"answer": 1,
+"explanation": "Relationship sets between participating entity sets are represented using diamond shapes.",
+"difficulty": "EASY"
+},
+{
+"q": "If every attribute set in a relation is a prime attribute, the relation is guaranteed to be in at least:",
+"options": ["1NF", "2NF", "3NF", "BCNF"],
+"answer": 2,
+"explanation": "If all attributes are prime, no non-prime attributes exist, automatically satisfying 2NF and 3NF conditions.",
+"difficulty": "HARD"
+},
+{
+"q": "Which property ensures that dependencies can be verified within decomposed relations without joining them?",
+"options": ["Lossless Join", "Dependency Preservation", "Redundancy Preservation", "Transitive Closure"],
+"answer": 1,
+"explanation": "Dependency preservation guarantees that all original functional dependencies can be enforced within individual sub-relations.",
+"difficulty": "HARD"
+}
+]
+},
+{
+"name": "Transactions & ACID Properties",
+"estHours": 5,
+"articles": [
+{
+"title": "Database Concurrency Control & Recovery",
+"content": "## ACID Properties\n- **Atomicity**: 'All-or-Nothing' execution guaranteed by Transaction Log (Undo/Redo).\n- **Consistency**: Database transitions from one valid state to another, maintaining invariants.\n- **Isolation**: Concurrent transactions execute without mutual interference (Concurrency Control).\n- **Durability**: Committed modifications persist permanently, even through system failure.\n\n## Isolation Levels & Read Phenomena\n| Isolation Level | Dirty Read | Non-Repeatable Read | Phantom Read |\n|---|---|---|---|\n| Read Uncommitted | Yes | Yes | Yes |\n| Read Committed | **No** | Yes | Yes |\n| Repeatable Read | **No** | **No** | Yes |\n| Serializable | **No** | **No** | **No** |\n\n## Concurrency Control Techniques\n- **Two-Phase Locking (2PL)**: Growing phase (locks acquired) $\to$ Shrinking phase (locks released). Guarantees serializability.\n- **Strict 2PL**: Holds exclusive locks until transaction `COMMIT`/`ROLLBACK` (prevents cascading rollbacks).\n- **WAL (Write-Ahead Logging)**: Log records written to stable storage **before** dirty pages are flushed to disk.",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "Which ACID property guarantees that all operations within a transaction complete successfully, or all are rolled back?",
+"options": ["Atomicity", "Consistency", "Isolation", "Durability"],
+"answer": 0,
+"explanation": "Atomicity enforces the 'all-or-nothing' execution rule for transactions.",
+"difficulty": "EASY"
+},
+{
+"q": "What phenomenon occurs when Transaction A reads uncommitted data written by Transaction B, which later rolls back?",
+"options": ["Non-Repeatable Read", "Dirty Read", "Phantom Read", "Lost Update"],
+"answer": 1,
+"explanation": "A Dirty Read occurs when reading uncommitted data modified by a concurrent transaction that subsequently fails.",
+"difficulty": "EASY"
+},
+{
+"q": "Which database isolation level provides maximum data isolation, completely preventing Dirty Reads, Non-Repeatable Reads, and Phantom Reads?",
+"options": ["Read Uncommitted", "Read Committed", "Repeatable Read", "Serializable"],
+"answer": 3,
+"explanation": "Serializable is the highest isolation level, executing transactions as if they occurred strictly sequentially.",
+"difficulty": "EASY"
+},
+{
+"q": "What does the Durability property in ACID ensure?",
+"options": ["Transactions run fast", "Committed data is saved permanently even after hardware crashes", "No deadlocks occur", "Data is formatted properly"],
+"answer": 1,
+"explanation": "Durability guarantees that committed transaction changes survive any subsequent OS or power crashes.",
+"difficulty": "EASY"
+},
+{
+"q": "In Two-Phase Locking (2PL), what occurs during the Growing Phase?",
+"options": ["Locks can only be released", "New locks can be acquired, but no locks can be released", "Data pages are deleted", "Transactions commit"],
+"answer": 1,
+"explanation": "In 2PL growing phase, locks are acquired. Once the first lock is released, the transaction enters the shrinking phase.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What write phenomenon happens when two transactions concurrently read the same row and overwrite it, losing one update?",
+"options": ["Dirty Read", "Phantom Read", "Lost Update", "Dirty Write"],
+"answer": 2,
+"explanation": "Lost Update occurs when concurrent writes overwrite each other without isolation protection.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is the key principle behind Write-Ahead Logging (WAL)?",
+"options": ["Write data to disk before logs", "Write transaction log records to stable storage BEFORE modifying database disk pages", "Write updates directly to cache", "Log operations only on commit"],
+"answer": 1,
+"explanation": "WAL requires log records representing changes to be flushed to non-volatile disk storage before actual data pages are updated.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which read anomaly occurs when re-reading the same row within a transaction yields modified attribute data due to another committed transaction?",
+"options": ["Dirty Read", "Non-Repeatable Read", "Phantom Read", "Cascading Abort"],
+"answer": 1,
+"explanation": "Non-Repeatable Read happens when data read twice within a transaction changes due to an intervening committed update.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What type of lock allows multiple concurrent transactions to read a resource simultaneously, but prevents modifications?",
+"options": ["Exclusive Lock (X)", "Shared Lock (S)", "Intent Lock (IX)", "Update Lock"],
+"answer": 1,
+"explanation": "Shared locks (S) permit concurrent readers, while blocking Exclusive (X) write locks.",
+"difficulty": "EASY"
+},
+{
+"q": "What characterizes a Phantom Read in SQL transaction processing?",
+"options": ["Reading uncommitted data", "A query execution returning a different set of rows matching a search predicate due to concurrent inserts", "Reading corrupted data pages", "Failing to write to log files"],
+"answer": 1,
+"explanation": "Phantom Reads occur when new rows matching a `WHERE` range query are inserted by another committed transaction mid-flight.",
+"difficulty": "HARD"
+},
+{
+"q": "What is Strict Two-Phase Locking (Strict 2PL)?",
+"options": ["Releasing locks immediately after read", "Holding all Exclusive (X) locks until the transaction terminates with COMMIT/ABORT", "Acquiring locks without shrinking", "Ignoring shared locks"],
+"answer": 1,
+"explanation": "Strict 2PL retains all exclusive locks until transaction completion, preventing cascading rollbacks.",
+"difficulty": "HARD"
+},
+{
+"q": "What mechanism detects circular wait conditions among locked database transactions?",
+"options": ["Wait-For Graph (WFG)", "B-Tree Index", "Redo Log", "Checkpointing"],
+"answer": 0,
+"explanation": "A Wait-For Graph tracks transaction lock dependencies; cycles in the graph indicate deadlocks.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What operation aborts a transaction, restoring data to its pre-transaction state?",
+"options": ["COMMIT", "SAVEPOINT", "ROLLBACK", "GRANT"],
+"answer": 2,
+"explanation": "ROLLBACK undoes uncommitted modifications using transaction undo logs.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the default transaction isolation level in MySQL InnoDB engine?",
+"options": ["Read Uncommitted", "Read Committed", "Repeatable Read", "Serializable"],
+"answer": 2,
+"explanation": "MySQL InnoDB defaults to Repeatable Read (using MVCC to prevent phantom reads in most cases).",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Multi-Version Concurrency Control (MVCC) achieves non-blocking reads by:",
+"options": ["Locking the entire table", "Maintaining multiple historical snapshot versions of data rows", "Converting writes to reads", "Disabling WAL"],
+"answer": 1,
+"explanation": "MVCC creates historical row versions, allowing readers to view consistent snapshots without acquiring read locks.",
+"difficulty": "HARD"
+},
+{
+"q": "Which statement about checkpoints in database recovery is correct?",
+"options": ["Checkpoints delete user data", "Checkpoints reduce recovery time by flushing dirty memory buffers to disk and writing a marker to log", "Checkpoints disable logging", "Checkpoints run only on system reboot"],
+"answer": 1,
+"explanation": "Checkpoints periodically write dirty cache pages to disk, limiting how far back log files must be scanned during crash recovery.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is a Cascading Rollback?",
+"options": ["A feature that speeds up databases", "Failure of one transaction triggering the rollback of multiple dependent uncommitted transactions", "Automatic rolling back of index pages", "Rolling back committed data"],
+"answer": 1,
+"explanation": "Cascading Rollback occurs when transaction $T_1$ fails, forcing $T_2$ (which read $T_1$'s dirty data) to also roll back.",
+"difficulty": "HARD"
+},
+{
+"q": "What SQL statement creates a sub-checkpoint within a transaction allowing partial rollbacks?",
+"options": ["COMMIT", "SAVEPOINT", "CHECKPOINT", "SET TRANSACTION"],
+"answer": 1,
+"explanation": "SAVEPOINT defines a marker within a transaction to which execution can selectively roll back.",
+"difficulty": "EASY"
+},
+{
+"q": "In database recovery, what does the 'Undo' operation do during crash recovery?",
+"options": ["Re-applies committed changes", "Reverses changes made by uncommitted transactions active during crash", "Deletes index tables", "Compresses log files"],
+"answer": 1,
+"explanation": "Undo scans the log backward to reverse changes of uncommitted transactions active at the time of system failure.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which component manages lock acquisition, grant requests, and compatibility matrices in a DBMS?",
+"options": ["Buffer Manager", "Lock Manager", "Recovery Manager", "Query Planner"],
+"answer": 1,
+"explanation": "The Lock Manager maintains lock hash tables, granted queues, and wait lists for database resources.",
+"difficulty": "EASY"
+}
+]
+}
+]
+}

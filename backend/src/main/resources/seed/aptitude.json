@@ -1,0 +1,2247 @@
+{
+  "name": "Aptitude",
+  "category": "APTITUDE",
+  "description": "Original placement-test practice based on the topic coverage and question styles represented in IndiaBIX. Questions are newly written and include explanations.",
+  "weight": 15,
+  "sortOrder": 1,
+  "topics": [
+    {
+      "name": "Percentage",
+      "estHours": 2,
+      "articles": [
+        {
+          "title": "Percentage: formulas and methods",
+          "content": "## Core formulas\n- x% of y = xy/100\n- Percentage change = (new − old)/old × 100\n- New value after an increase of p% = old × (1+p/100)\n- New value after a decrease of p% = old × (1−p/100)\n\n**Method:** identify the base quantity before calculating a percentage. Successive percentage changes apply to the updated value, not always the original value.",
+          "type": "FORMULA"
+        }
+      ],
+      "questions": [
+        {
+          "q": "What is 5% of ₹237?",
+          "options": [
+            "₹4.85",
+            "₹22.85",
+            "₹118.5",
+            "₹11.85"
+          ],
+          "answer": 3,
+          "explanation": "5% of 237 = 5 × 237/100 = ₹11.85.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A salary of ₹274 increases by 8%. What is the new salary?",
+          "options": [
+            "₹314.92",
+            "₹295.92",
+            "₹252.08",
+            "₹282"
+          ],
+          "answer": 1,
+          "explanation": "New salary = 274 × (1 + 8/100) = ₹295.92.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A machine priced at ₹311 is discounted by 12%. Find its price after discount.",
+          "options": [
+            "₹348.32",
+            "₹299",
+            "₹256.68",
+            "₹273.68"
+          ],
+          "answer": 3,
+          "explanation": "Discounted price = 311 × (1 − 12/100) = ₹273.68.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A quantity changes from 348 to 295.8. What is the percentage change?",
+          "options": [
+            "20% decrease",
+            "25% decrease",
+            "15% increase",
+            "15% decrease"
+          ],
+          "answer": 3,
+          "explanation": "Percentage change = (295.8 − 348)/348 × 100 = -15%, hence a 15% decrease.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "What is 20% of ₹385?",
+          "options": [
+            "₹88",
+            "₹770",
+            "₹70",
+            "₹77"
+          ],
+          "answer": 3,
+          "explanation": "20% of 385 = 20 × 385/100 = ₹77.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A salary of ₹422 increases by 25%. What is the new salary?",
+          "options": [
+            "₹527.5",
+            "₹546.5",
+            "₹447",
+            "₹316.5"
+          ],
+          "answer": 0,
+          "explanation": "New salary = 422 × (1 + 25/100) = ₹527.5.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A machine priced at ₹459 is discounted by 30%. Find its price after discount.",
+          "options": [
+            "₹321.3",
+            "₹596.7",
+            "₹429",
+            "₹304.3"
+          ],
+          "answer": 0,
+          "explanation": "Discounted price = 459 × (1 − 30/100) = ₹321.3.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A quantity changes from 496 to 297.6. What is the percentage change?",
+          "options": [
+            "50% decrease",
+            "40% increase",
+            "45% decrease",
+            "40% decrease"
+          ],
+          "answer": 3,
+          "explanation": "Percentage change = (297.6 − 496)/496 × 100 = -40%, hence a 40% decrease.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "What is 10% of ₹533?",
+          "options": [
+            "₹533",
+            "₹53.3",
+            "₹64.3",
+            "₹46.3"
+          ],
+          "answer": 1,
+          "explanation": "10% of 533 = 10 × 533/100 = ₹53.3.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A salary of ₹570 increases by 18%. What is the new salary?",
+          "options": [
+            "₹467.4",
+            "₹691.6",
+            "₹588",
+            "₹672.6"
+          ],
+          "answer": 3,
+          "explanation": "New salary = 570 × (1 + 18/100) = ₹672.6.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A machine priced at ₹607 is discounted by 5%. Find its price after discount.",
+          "options": [
+            "₹602",
+            "₹637.35",
+            "₹576.65",
+            "₹559.65"
+          ],
+          "answer": 2,
+          "explanation": "Discounted price = 607 × (1 − 5/100) = ₹576.65.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A quantity changes from 644 to 592.48. What is the percentage change?",
+          "options": [
+            "13% decrease",
+            "18% decrease",
+            "8% decrease",
+            "8% increase"
+          ],
+          "answer": 2,
+          "explanation": "Percentage change = (592.48 − 644)/644 × 100 = -8%, hence a 8% decrease.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "What is 12% of ₹681?",
+          "options": [
+            "₹74.72",
+            "₹817.2",
+            "₹81.72",
+            "₹92.72"
+          ],
+          "answer": 2,
+          "explanation": "12% of 681 = 12 × 681/100 = ₹81.72.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A salary of ₹718 increases by 15%. What is the new salary?",
+          "options": [
+            "₹844.7",
+            "₹825.7",
+            "₹610.3",
+            "₹733"
+          ],
+          "answer": 1,
+          "explanation": "New salary = 718 × (1 + 15/100) = ₹825.7.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A machine priced at ₹755 is discounted by 20%. Find its price after discount.",
+          "options": [
+            "₹587",
+            "₹604",
+            "₹735",
+            "₹906"
+          ],
+          "answer": 1,
+          "explanation": "Discounted price = 755 × (1 − 20/100) = ₹604.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A quantity changes from 792 to 594. What is the percentage change?",
+          "options": [
+            "30% decrease",
+            "25% increase",
+            "35% decrease",
+            "25% decrease"
+          ],
+          "answer": 3,
+          "explanation": "Percentage change = (594 − 792)/792 × 100 = -25%, hence a 25% decrease.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "What is 30% of ₹829?",
+          "options": [
+            "₹2487",
+            "₹248.7",
+            "₹259.7",
+            "₹241.7"
+          ],
+          "answer": 1,
+          "explanation": "30% of 829 = 30 × 829/100 = ₹248.7.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A salary of ₹866 increases by 40%. What is the new salary?",
+          "options": [
+            "₹906",
+            "₹1231.4",
+            "₹519.6",
+            "₹1212.4"
+          ],
+          "answer": 3,
+          "explanation": "New salary = 866 × (1 + 40/100) = ₹1212.4.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A machine priced at ₹903 is discounted by 10%. Find its price after discount.",
+          "options": [
+            "₹893",
+            "₹795.7",
+            "₹812.7",
+            "₹993.3"
+          ],
+          "answer": 2,
+          "explanation": "Discounted price = 903 × (1 − 10/100) = ₹812.7.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A quantity changes from 940 to 770.8. What is the percentage change?",
+          "options": [
+            "18% increase",
+            "28% decrease",
+            "18% decrease",
+            "23% decrease"
+          ],
+          "answer": 2,
+          "explanation": "Percentage change = (770.8 − 940)/940 × 100 = -18%, hence a 18% decrease.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "What is 5% of ₹977?",
+          "options": [
+            "₹41.85",
+            "₹59.85",
+            "₹48.85",
+            "₹488.5"
+          ],
+          "answer": 2,
+          "explanation": "5% of 977 = 5 × 977/100 = ₹48.85.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A salary of ₹1014 increases by 8%. What is the new salary?",
+          "options": [
+            "₹1022",
+            "₹932.88",
+            "₹1095.12",
+            "₹1114.12"
+          ],
+          "answer": 2,
+          "explanation": "New salary = 1014 × (1 + 8/100) = ₹1095.12.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A machine priced at ₹1051 is discounted by 12%. Find its price after discount.",
+          "options": [
+            "₹907.88",
+            "₹1039",
+            "₹924.88",
+            "₹1177.12"
+          ],
+          "answer": 2,
+          "explanation": "Discounted price = 1051 × (1 − 12/100) = ₹924.88.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A quantity changes from 1088 to 924.8. What is the percentage change?",
+          "options": [
+            "15% increase",
+            "25% decrease",
+            "15% decrease",
+            "20% decrease"
+          ],
+          "answer": 2,
+          "explanation": "Percentage change = (924.8 − 1088)/1088 × 100 = -15%, hence a 15% decrease.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "What is 20% of ₹1125?",
+          "options": [
+            "₹2250",
+            "₹236",
+            "₹225",
+            "₹218"
+          ],
+          "answer": 2,
+          "explanation": "20% of 1125 = 20 × 1125/100 = ₹225.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A salary of ₹1162 increases by 25%. What is the new salary?",
+          "options": [
+            "₹871.5",
+            "₹1471.5",
+            "₹1452.5",
+            "₹1187"
+          ],
+          "answer": 2,
+          "explanation": "New salary = 1162 × (1 + 25/100) = ₹1452.5.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A machine priced at ₹1199 is discounted by 30%. Find its price after discount.",
+          "options": [
+            "₹1169",
+            "₹839.3",
+            "₹1558.7",
+            "₹822.3"
+          ],
+          "answer": 1,
+          "explanation": "Discounted price = 1199 × (1 − 30/100) = ₹839.3.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A quantity changes from 1236 to 741.6. What is the percentage change?",
+          "options": [
+            "45% decrease",
+            "50% decrease",
+            "40% increase",
+            "40% decrease"
+          ],
+          "answer": 3,
+          "explanation": "Percentage change = (741.6 − 1236)/1236 × 100 = -40%, hence a 40% decrease.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "What is 10% of ₹1273?",
+          "options": [
+            "₹120.3",
+            "₹1273",
+            "₹138.3",
+            "₹127.3"
+          ],
+          "answer": 3,
+          "explanation": "10% of 1273 = 10 × 1273/100 = ₹127.3.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A salary of ₹1310 increases by 18%. What is the new salary?",
+          "options": [
+            "₹1328",
+            "₹1564.8",
+            "₹1074.2",
+            "₹1545.8"
+          ],
+          "answer": 3,
+          "explanation": "New salary = 1310 × (1 + 18/100) = ₹1545.8.",
+          "difficulty": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "name": "Problems on Trains",
+      "estHours": 2,
+      "articles": [
+        {
+          "title": "Problems on Trains: formulas and methods",
+          "content": "## Core formulas\n- Convert km/h to m/s by multiplying by 5/18.\n- Time to pass a pole = train length / speed.\n- Time to cross a platform = (train length + platform length) / speed.\n- Opposite-direction relative speed = sum of speeds; same-direction relative speed = difference of speeds.\n\n**Method:** express all lengths in metres and speeds in metres per second before calculating time.",
+          "type": "FORMULA"
+        }
+      ],
+      "questions": [
+        {
+          "q": "A train 113 m long travels at 36 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "5.65 seconds",
+            "11.30 seconds",
+            "13.30 seconds",
+            "3.14 seconds"
+          ],
+          "answer": 1,
+          "explanation": "Speed = 36 × 5/18 = 10.00 m/s. Time = length/speed = 113/10.00 ≈ 11.30 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A 130 m train moving at 39 km/h crosses a 78 m platform. Find the time taken.",
+          "options": [
+            "7.20 seconds",
+            "12.00 seconds",
+            "24.20 seconds",
+            "19.20 seconds"
+          ],
+          "answer": 3,
+          "explanation": "Distance covered = 130+78 = 208 m. Speed = 10.83 m/s. Time = 208/10.83 ≈ 19.20 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Two trains of lengths 147 m and 117 m approach each other at 42 km/h and 28 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "16.58 seconds",
+            "22.63 seconds",
+            "7.56 seconds",
+            "13.58 seconds"
+          ],
+          "answer": 3,
+          "explanation": "Relative speed = (42+28)×5/18 = 19.44 m/s. Total length = 264 m; time ≈ 13.58 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A train 164 m long travels at 45 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "6.56 seconds",
+            "13.12 seconds",
+            "3.64 seconds",
+            "15.12 seconds"
+          ],
+          "answer": 1,
+          "explanation": "Speed = 45 × 5/18 = 12.50 m/s. Time = length/speed = 164/12.50 ≈ 13.12 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A 181 m train moving at 48 km/h crosses a 111 m platform. Find the time taken.",
+          "options": [
+            "13.57 seconds",
+            "21.90 seconds",
+            "8.32 seconds",
+            "26.90 seconds"
+          ],
+          "answer": 1,
+          "explanation": "Distance covered = 181+111 = 292 m. Speed = 13.33 m/s. Time = 292/13.33 ≈ 21.90 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Two trains of lengths 198 m and 156 m approach each other at 51 km/h and 34 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "8.39 seconds",
+            "14.99 seconds",
+            "17.99 seconds",
+            "24.99 seconds"
+          ],
+          "answer": 1,
+          "explanation": "Relative speed = (51+34)×5/18 = 23.61 m/s. Total length = 354 m; time ≈ 14.99 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A train 215 m long travels at 54 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "7.17 seconds",
+            "16.33 seconds",
+            "3.98 seconds",
+            "14.33 seconds"
+          ],
+          "answer": 3,
+          "explanation": "Speed = 54 × 5/18 = 15.00 m/s. Time = length/speed = 215/15.00 ≈ 14.33 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A 232 m train moving at 57 km/h crosses a 144 m platform. Find the time taken.",
+          "options": [
+            "23.75 seconds",
+            "14.65 seconds",
+            "28.75 seconds",
+            "9.09 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Distance covered = 232+144 = 376 m. Speed = 15.83 m/s. Time = 376/15.83 ≈ 23.75 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Two trains of lengths 249 m and 195 m approach each other at 60 km/h and 40 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "26.64 seconds",
+            "15.98 seconds",
+            "18.98 seconds",
+            "8.96 seconds"
+          ],
+          "answer": 1,
+          "explanation": "Relative speed = (60+40)×5/18 = 27.78 m/s. Total length = 444 m; time ≈ 15.98 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A train 266 m long travels at 63 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "17.20 seconds",
+            "4.22 seconds",
+            "15.20 seconds",
+            "7.60 seconds"
+          ],
+          "answer": 2,
+          "explanation": "Speed = 63 × 5/18 = 17.50 m/s. Time = length/speed = 266/17.50 ≈ 15.20 seconds.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "A 283 m train moving at 66 km/h crosses a 177 m platform. Find the time taken.",
+          "options": [
+            "25.09 seconds",
+            "15.44 seconds",
+            "9.65 seconds",
+            "30.09 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Distance covered = 283+177 = 460 m. Speed = 18.33 m/s. Time = 460/18.33 ≈ 25.09 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Two trains of lengths 300 m and 234 m approach each other at 69 km/h and 46 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "19.72 seconds",
+            "27.86 seconds",
+            "16.72 seconds",
+            "9.39 seconds"
+          ],
+          "answer": 2,
+          "explanation": "Relative speed = (69+46)×5/18 = 31.94 m/s. Total length = 534 m; time ≈ 16.72 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A train 317 m long travels at 72 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "17.85 seconds",
+            "7.92 seconds",
+            "15.85 seconds",
+            "4.40 seconds"
+          ],
+          "answer": 2,
+          "explanation": "Speed = 72 × 5/18 = 20.00 m/s. Time = length/speed = 317/20.00 ≈ 15.85 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A 334 m train moving at 75 km/h crosses a 210 m platform. Find the time taken.",
+          "options": [
+            "26.11 seconds",
+            "31.11 seconds",
+            "10.08 seconds",
+            "16.03 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Distance covered = 334+210 = 544 m. Speed = 20.83 m/s. Time = 544/20.83 ≈ 26.11 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Two trains of lengths 351 m and 273 m approach each other at 78 km/h and 52 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "17.28 seconds",
+            "20.28 seconds",
+            "28.80 seconds",
+            "9.72 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Relative speed = (78+52)×5/18 = 36.11 m/s. Total length = 624 m; time ≈ 17.28 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A train 368 m long travels at 81 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "16.36 seconds",
+            "8.18 seconds",
+            "4.54 seconds",
+            "18.36 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Speed = 81 × 5/18 = 22.50 m/s. Time = length/speed = 368/22.50 ≈ 16.36 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A 385 m train moving at 84 km/h crosses a 243 m platform. Find the time taken.",
+          "options": [
+            "16.50 seconds",
+            "10.41 seconds",
+            "26.91 seconds",
+            "31.91 seconds"
+          ],
+          "answer": 2,
+          "explanation": "Distance covered = 385+243 = 628 m. Speed = 23.33 m/s. Time = 628/23.33 ≈ 26.91 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Two trains of lengths 402 m and 312 m approach each other at 87 km/h and 58 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "9.98 seconds",
+            "17.73 seconds",
+            "29.54 seconds",
+            "20.73 seconds"
+          ],
+          "answer": 1,
+          "explanation": "Relative speed = (87+58)×5/18 = 40.28 m/s. Total length = 714 m; time ≈ 17.73 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A train 419 m long travels at 90 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "16.76 seconds",
+            "8.38 seconds",
+            "4.66 seconds",
+            "18.76 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Speed = 90 × 5/18 = 25.00 m/s. Time = length/speed = 419/25.00 ≈ 16.76 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A 436 m train moving at 93 km/h crosses a 276 m platform. Find the time taken.",
+          "options": [
+            "27.56 seconds",
+            "32.56 seconds",
+            "10.68 seconds",
+            "16.88 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Distance covered = 436+276 = 712 m. Speed = 25.83 m/s. Time = 712/25.83 ≈ 27.56 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Two trains of lengths 453 m and 351 m approach each other at 36 km/h and 64 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "31.94 seconds",
+            "80.40 seconds",
+            "16.31 seconds",
+            "28.94 seconds"
+          ],
+          "answer": 3,
+          "explanation": "Relative speed = (36+64)×5/18 = 27.78 m/s. Total length = 804 m; time ≈ 28.94 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A train 470 m long travels at 39 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "21.69 seconds",
+            "12.05 seconds",
+            "45.38 seconds",
+            "43.38 seconds"
+          ],
+          "answer": 3,
+          "explanation": "Speed = 39 × 5/18 = 10.83 m/s. Time = length/speed = 470/10.83 ≈ 43.38 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "A 487 m train moving at 42 km/h crosses a 309 m platform. Find the time taken.",
+          "options": [
+            "68.23 seconds",
+            "73.23 seconds",
+            "26.49 seconds",
+            "41.74 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Distance covered = 487+309 = 796 m. Speed = 11.67 m/s. Time = 796/11.67 ≈ 68.23 seconds.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Two trains of lengths 504 m and 390 m approach each other at 45 km/h and 70 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "30.99 seconds",
+            "15.78 seconds",
+            "71.52 seconds",
+            "27.99 seconds"
+          ],
+          "answer": 3,
+          "explanation": "Relative speed = (45+70)×5/18 = 31.94 m/s. Total length = 894 m; time ≈ 27.99 seconds.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "A train 521 m long travels at 48 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "39.07 seconds",
+            "19.54 seconds",
+            "41.07 seconds",
+            "10.85 seconds"
+          ],
+          "answer": 0,
+          "explanation": "Speed = 48 × 5/18 = 13.33 m/s. Time = length/speed = 521/13.33 ≈ 39.07 seconds.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "A 538 m train moving at 51 km/h crosses a 342 m platform. Find the time taken.",
+          "options": [
+            "37.98 seconds",
+            "24.14 seconds",
+            "62.12 seconds",
+            "67.12 seconds"
+          ],
+          "answer": 2,
+          "explanation": "Distance covered = 538+342 = 880 m. Speed = 14.17 m/s. Time = 880/14.17 ≈ 62.12 seconds.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Two trains of lengths 555 m and 429 m approach each other at 54 km/h and 76 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "30.25 seconds",
+            "27.25 seconds",
+            "65.60 seconds",
+            "15.37 seconds"
+          ],
+          "answer": 1,
+          "explanation": "Relative speed = (54+76)×5/18 = 36.11 m/s. Total length = 984 m; time ≈ 27.25 seconds.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "A train 572 m long travels at 57 km/h. How long does it take to pass a signal post?",
+          "options": [
+            "18.06 seconds",
+            "38.13 seconds",
+            "10.04 seconds",
+            "36.13 seconds"
+          ],
+          "answer": 3,
+          "explanation": "Speed = 57 × 5/18 = 15.83 m/s. Time = length/speed = 572/15.83 ≈ 36.13 seconds.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "A 589 m train moving at 60 km/h crosses a 375 m platform. Find the time taken.",
+          "options": [
+            "35.34 seconds",
+            "22.50 seconds",
+            "57.84 seconds",
+            "62.84 seconds"
+          ],
+          "answer": 2,
+          "explanation": "Distance covered = 589+375 = 964 m. Speed = 16.67 m/s. Time = 964/16.67 ≈ 57.84 seconds.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Two trains of lengths 606 m and 468 m approach each other at 63 km/h and 82 km/h. Approximately how long do they take to cross?",
+          "options": [
+            "61.37 seconds",
+            "29.66 seconds",
+            "15.05 seconds",
+            "26.66 seconds"
+          ],
+          "answer": 3,
+          "explanation": "Relative speed = (63+82)×5/18 = 40.28 m/s. Total length = 1074 m; time ≈ 26.66 seconds.",
+          "difficulty": "HARD"
+        }
+      ]
+    },
+    {
+      "name": "Synonyms",
+      "estHours": 2,
+      "articles": [
+        {
+          "title": "Synonyms: meaning in context",
+          "content": "## Approach\n- Identify the word's meaning in context before looking at the options.\n- Eliminate choices that are related but not equivalent.\n- Consider tone and intensity: two words may be similar without being interchangeable in every sentence.\n\n**Practice tip:** learn words in context, including common collocations and connotations.",
+          "type": "CONCEPT"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Choose the word closest in meaning to 'ABATE'.",
+          "options": [
+            "intensify",
+            "divide",
+            "predict",
+            "lessen"
+          ],
+          "answer": 3,
+          "explanation": "Abate means to reduce in intensity.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'CANDID'.",
+          "options": [
+            "hostile",
+            "frank",
+            "secretive",
+            "careless"
+          ],
+          "answer": 1,
+          "explanation": "Candid means honest and direct.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'EPHEMERAL'.",
+          "options": [
+            "expensive",
+            "short-lived",
+            "obvious",
+            "permanent"
+          ],
+          "answer": 1,
+          "explanation": "Ephemeral describes something lasting a very short time.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'METICULOUS'.",
+          "options": [
+            "reckless",
+            "careful",
+            "impatient",
+            "ordinary"
+          ],
+          "answer": 1,
+          "explanation": "Meticulous means showing great attention to detail.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'OBSTINATE'.",
+          "options": [
+            "stubborn",
+            "uncertain",
+            "flexible",
+            "generous"
+          ],
+          "answer": 0,
+          "explanation": "Obstinate means unwilling to change one's position.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'PRUDENT'.",
+          "options": [
+            "wasteful",
+            "talkative",
+            "wise",
+            "rash"
+          ],
+          "answer": 2,
+          "explanation": "Prudent means acting with good judgment.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'LUCID'.",
+          "options": [
+            "clear",
+            "lengthy",
+            "confusing",
+            "dim"
+          ],
+          "answer": 0,
+          "explanation": "Lucid means easy to understand.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'NOVICE'.",
+          "options": [
+            "leader",
+            "critic",
+            "expert",
+            "beginner"
+          ],
+          "answer": 3,
+          "explanation": "A novice is a beginner.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'RESILIENT'.",
+          "options": [
+            "fragile",
+            "adaptable",
+            "apathetic",
+            "rigid"
+          ],
+          "answer": 1,
+          "explanation": "Resilient means able to recover after difficulty.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'VENERATE'.",
+          "options": [
+            "mock",
+            "interrupt",
+            "avoid",
+            "respect"
+          ],
+          "answer": 3,
+          "explanation": "Venerate means regard with deep respect.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'IMPARTIAL'.",
+          "options": [
+            "unbiased",
+            "careless",
+            "emotional",
+            "prejudiced"
+          ],
+          "answer": 0,
+          "explanation": "Impartial means not favouring either side.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'AMBIGUOUS'.",
+          "options": [
+            "obvious",
+            "precise",
+            "unclear",
+            "certain"
+          ],
+          "answer": 2,
+          "explanation": "Ambiguous means open to more than one interpretation.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'DILIGENT'.",
+          "options": [
+            "hesitant",
+            "careless",
+            "hardworking",
+            "idle"
+          ],
+          "answer": 2,
+          "explanation": "Diligent means careful and persistent in work.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'ALLEVIATE'.",
+          "options": [
+            "conceal",
+            "worsen",
+            "ease",
+            "delay"
+          ],
+          "answer": 2,
+          "explanation": "Alleviate means make a problem less severe.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'ASSERTIVE'.",
+          "options": [
+            "timid",
+            "uncertain",
+            "submissive",
+            "confident"
+          ],
+          "answer": 3,
+          "explanation": "Assertive means expressing views confidently.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'CREDIBLE'.",
+          "options": [
+            "unclear",
+            "implausible",
+            "irrelevant",
+            "believable"
+          ],
+          "answer": 3,
+          "explanation": "Credible means capable of being believed.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'FORTUITOUS'.",
+          "options": [
+            "planned",
+            "inevitable",
+            "deliberate",
+            "accidental"
+          ],
+          "answer": 3,
+          "explanation": "Fortuitous means happening by chance.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'INNOVATIVE'.",
+          "options": [
+            "unoriginal",
+            "traditional",
+            "inventive",
+            "routine"
+          ],
+          "answer": 2,
+          "explanation": "Innovative means introducing new ideas.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'OMINOUS'.",
+          "options": [
+            "cheerful",
+            "promising",
+            "threatening",
+            "harmless"
+          ],
+          "answer": 2,
+          "explanation": "Ominous suggests something bad may happen.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'PLAUSIBLE'.",
+          "options": [
+            "impossible",
+            "reasonable",
+            "absurd",
+            "unrelated"
+          ],
+          "answer": 1,
+          "explanation": "Plausible means seeming reasonable or likely.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'RETICENT'.",
+          "options": [
+            "talkative",
+            "open",
+            "reckless",
+            "reserved"
+          ],
+          "answer": 3,
+          "explanation": "Reticent means not revealing thoughts readily.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'SCRUTINIZE'.",
+          "options": [
+            "damage",
+            "summarize",
+            "examine",
+            "ignore"
+          ],
+          "answer": 2,
+          "explanation": "Scrutinize means inspect closely.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'TENACIOUS'.",
+          "options": [
+            "yielding",
+            "persistent",
+            "indifferent",
+            "fragile"
+          ],
+          "answer": 1,
+          "explanation": "Tenacious means holding firmly to a course.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'UBIQUITOUS'.",
+          "options": [
+            "temporary",
+            "rare",
+            "hidden",
+            "widespread"
+          ],
+          "answer": 3,
+          "explanation": "Ubiquitous means present or found everywhere.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'VINDICATE'.",
+          "options": [
+            "punish",
+            "confuse",
+            "accuse",
+            "clear of blame"
+          ],
+          "answer": 3,
+          "explanation": "Vindicate means show that someone is not to blame.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'WARY'.",
+          "options": [
+            "reckless",
+            "cautious",
+            "carefree",
+            "trusting"
+          ],
+          "answer": 1,
+          "explanation": "Wary means alert to possible danger.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'ZEALOUS'.",
+          "options": [
+            "apathetic",
+            "reluctant",
+            "enthusiastic",
+            "weary"
+          ],
+          "answer": 2,
+          "explanation": "Zealous means showing strong enthusiasm.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'CONVIVIAL'.",
+          "options": [
+            "formal",
+            "gloomy",
+            "sociable",
+            "hostile"
+          ],
+          "answer": 2,
+          "explanation": "Convivial means friendly and enjoyable.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'DEARTH'.",
+          "options": [
+            "abundance",
+            "shortage",
+            "excess",
+            "surplus"
+          ],
+          "answer": 1,
+          "explanation": "Dearth means a lack or shortage.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word closest in meaning to 'ENIGMATIC'.",
+          "options": [
+            "ordinary",
+            "obvious",
+            "mysterious",
+            "transparent"
+          ],
+          "answer": 2,
+          "explanation": "Enigmatic means difficult to interpret.",
+          "difficulty": "HARD"
+        }
+      ]
+    },
+    {
+      "name": "Antonyms",
+      "estHours": 2,
+      "articles": [
+        {
+          "title": "Antonyms: contrast and context",
+          "content": "## Approach\n- Determine the intended sense of the word.\n- Choose the clearest opposite, not merely an unrelated word.\n- Watch for words with multiple meanings; the sentence context may determine the answer.\n\n**Practice tip:** learn common prefixes and word roots, but verify the full meaning.",
+          "type": "CONCEPT"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'MITIGATE'.",
+          "options": [
+            "aggravate",
+            "relieve",
+            "soften",
+            "reduce"
+          ],
+          "answer": 0,
+          "explanation": "Mitigate means lessen; aggravate means make worse.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'SCARCE'.",
+          "options": [
+            "limited",
+            "meagre",
+            "rare",
+            "plentiful"
+          ],
+          "answer": 3,
+          "explanation": "Plentiful is the opposite of scarce.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'TRANSPARENT'.",
+          "options": [
+            "clear",
+            "visible",
+            "opaque",
+            "honest"
+          ],
+          "answer": 2,
+          "explanation": "Opaque contrasts with transparent.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'HOSTILE'.",
+          "options": [
+            "angry",
+            "friendly",
+            "distant",
+            "aggressive"
+          ],
+          "answer": 1,
+          "explanation": "Friendly is the opposite of hostile.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'CONCISE'.",
+          "options": [
+            "brief",
+            "verbose",
+            "direct",
+            "precise"
+          ],
+          "answer": 1,
+          "explanation": "Verbose means using more words than necessary.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'RELUCTANT'.",
+          "options": [
+            "unwilling",
+            "hesitant",
+            "cautious",
+            "eager"
+          ],
+          "answer": 3,
+          "explanation": "Eager contrasts with reluctant.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'RIGID'.",
+          "options": [
+            "fixed",
+            "stiff",
+            "flexible",
+            "strict"
+          ],
+          "answer": 2,
+          "explanation": "Flexible is the opposite of rigid.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'OPTIMISTIC'.",
+          "options": [
+            "positive",
+            "pessimistic",
+            "confident",
+            "hopeful"
+          ],
+          "answer": 1,
+          "explanation": "Pessimistic is the opposite of optimistic.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'EXPAND'.",
+          "options": [
+            "increase",
+            "extend",
+            "contract",
+            "enlarge"
+          ],
+          "answer": 2,
+          "explanation": "Contract means become smaller.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'INFERIOR'.",
+          "options": [
+            "lesser",
+            "lower",
+            "weaker",
+            "superior"
+          ],
+          "answer": 3,
+          "explanation": "Superior is the opposite of inferior.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'GENEROUS'.",
+          "options": [
+            "stingy",
+            "charitable",
+            "giving",
+            "kind"
+          ],
+          "answer": 0,
+          "explanation": "Stingy means unwilling to give or spend.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'ANCIENT'.",
+          "options": [
+            "historic",
+            "old",
+            "aged",
+            "modern"
+          ],
+          "answer": 3,
+          "explanation": "Modern contrasts with ancient.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'VIVID'.",
+          "options": [
+            "dull",
+            "clear",
+            "graphic",
+            "bright"
+          ],
+          "answer": 0,
+          "explanation": "Dull contrasts with vivid in intensity or brightness.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'FREQUENT'.",
+          "options": [
+            "repeated",
+            "rare",
+            "regular",
+            "common"
+          ],
+          "answer": 1,
+          "explanation": "Rare means occurring infrequently.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'COMPLEX'.",
+          "options": [
+            "difficult",
+            "complicated",
+            "simple",
+            "intricate"
+          ],
+          "answer": 2,
+          "explanation": "Simple is the opposite of complex.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'PRAISE'.",
+          "options": [
+            "criticize",
+            "commend",
+            "admire",
+            "applaud"
+          ],
+          "answer": 0,
+          "explanation": "Criticize contrasts with praise.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'HUMBLE'.",
+          "options": [
+            "arrogant",
+            "unassuming",
+            "modest",
+            "meek"
+          ],
+          "answer": 0,
+          "explanation": "Arrogant is the opposite of humble.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'VACANT'.",
+          "options": [
+            "occupied",
+            "empty",
+            "available",
+            "unfilled"
+          ],
+          "answer": 0,
+          "explanation": "Occupied contrasts with vacant.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'PERMIT'.",
+          "options": [
+            "allow",
+            "authorize",
+            "forbid",
+            "enable"
+          ],
+          "answer": 2,
+          "explanation": "Forbid is the opposite of permit.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'INCREASE'.",
+          "options": [
+            "decrease",
+            "expand",
+            "grow",
+            "rise"
+          ],
+          "answer": 0,
+          "explanation": "Decrease is the opposite of increase.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'PERMANENT'.",
+          "options": [
+            "temporary",
+            "enduring",
+            "fixed",
+            "lasting"
+          ],
+          "answer": 0,
+          "explanation": "Temporary contrasts with permanent.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'COURAGEOUS'.",
+          "options": [
+            "fearless",
+            "cowardly",
+            "bold",
+            "brave"
+          ],
+          "answer": 1,
+          "explanation": "Cowardly is the opposite of courageous.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'ARTIFICIAL'.",
+          "options": [
+            "synthetic",
+            "natural",
+            "imitation",
+            "manufactured"
+          ],
+          "answer": 1,
+          "explanation": "Natural contrasts with artificial.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'ACCEPT'.",
+          "options": [
+            "reject",
+            "approve",
+            "admit",
+            "receive"
+          ],
+          "answer": 0,
+          "explanation": "Reject is the opposite of accept.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'FERTILE'.",
+          "options": [
+            "productive",
+            "barren",
+            "fruitful",
+            "rich"
+          ],
+          "answer": 1,
+          "explanation": "Barren contrasts with fertile.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'COMPLY'.",
+          "options": [
+            "resist",
+            "conform",
+            "obey",
+            "follow"
+          ],
+          "answer": 0,
+          "explanation": "Resist contrasts with comply.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'OPTIMAL'.",
+          "options": [
+            "excellent",
+            "best",
+            "suboptimal",
+            "ideal"
+          ],
+          "answer": 2,
+          "explanation": "Suboptimal means less than the best.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'INNOCENT'.",
+          "options": [
+            "harmless",
+            "guilty",
+            "blameless",
+            "pure"
+          ],
+          "answer": 1,
+          "explanation": "Guilty is the opposite of innocent.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'ASCEND'.",
+          "options": [
+            "rise",
+            "descend",
+            "climb",
+            "mount"
+          ],
+          "answer": 1,
+          "explanation": "Descend means move downward.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Choose the word most nearly opposite in meaning to 'EXPLICIT'.",
+          "options": [
+            "clear",
+            "implicit",
+            "stated",
+            "direct"
+          ],
+          "answer": 1,
+          "explanation": "Implicit contrasts with explicit.",
+          "difficulty": "HARD"
+        }
+      ]
+    },
+    {
+      "name": "Number Series",
+      "estHours": 2,
+      "articles": [
+        {
+          "title": "Number Series: identifying patterns",
+          "content": "## Common patterns\n- Constant addition or subtraction\n- Multiplication or division\n- Increasing differences\n- Squares, cubes, and other sequences\n- Each term formed from earlier terms\n\n**Method:** calculate consecutive differences first; if they are not constant, inspect ratios and second differences.",
+          "type": "CONCEPT"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Find the next term: 3, 6, 12, 24, __.",
+          "options": [
+            "48",
+            "50",
+            "96",
+            "46"
+          ],
+          "answer": 0,
+          "explanation": "Each term doubles.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 5, 9, 13, 17, __.",
+          "options": [
+            "21",
+            "42",
+            "23",
+            "19"
+          ],
+          "answer": 0,
+          "explanation": "The sequence increases by 4.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 2, 6, 12, 20, __.",
+          "options": [
+            "60",
+            "30",
+            "32",
+            "28"
+          ],
+          "answer": 1,
+          "explanation": "The terms are n(n+1): 1×2, 2×3, 3×4, 4×5; next is 5×6.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 1, 4, 9, 16, __.",
+          "options": [
+            "23",
+            "27",
+            "50",
+            "25"
+          ],
+          "answer": 3,
+          "explanation": "These are consecutive squares: 1², 2², 3², 4²; next is 5².",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 2, 3, 5, 8, 13, __.",
+          "options": [
+            "23",
+            "42",
+            "19",
+            "21"
+          ],
+          "answer": 3,
+          "explanation": "Each term after the first two is the sum of the previous two.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 81, 27, 9, 3, __.",
+          "options": [
+            "2",
+            "3",
+            "1",
+            "-1"
+          ],
+          "answer": 2,
+          "explanation": "Each term is divided by 3.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 7, 14, 28, 56, __.",
+          "options": [
+            "110",
+            "112",
+            "224",
+            "114"
+          ],
+          "answer": 1,
+          "explanation": "Each term doubles.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 1, 3, 6, 10, __.",
+          "options": [
+            "13",
+            "15",
+            "17",
+            "30"
+          ],
+          "answer": 1,
+          "explanation": "The increments are +2, +3, +4; next increment is +5.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 10, 13, 19, 28, __.",
+          "options": [
+            "42",
+            "40",
+            "80",
+            "38"
+          ],
+          "answer": 1,
+          "explanation": "The increments are +3, +6, +9; next increment is +12.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 64, 32, 16, 8, __.",
+          "options": [
+            "8",
+            "4",
+            "6",
+            "2"
+          ],
+          "answer": 1,
+          "explanation": "Each term is halved.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Find the next term: 5, 8, 14, 26, __.",
+          "options": [
+            "48",
+            "50",
+            "100",
+            "52"
+          ],
+          "answer": 1,
+          "explanation": "Each term doubles.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 7, 11, 15, 19, __.",
+          "options": [
+            "21",
+            "25",
+            "23",
+            "46"
+          ],
+          "answer": 2,
+          "explanation": "The sequence increases by 4.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 4, 8, 14, 22, __.",
+          "options": [
+            "30",
+            "32",
+            "34",
+            "64"
+          ],
+          "answer": 1,
+          "explanation": "The terms are n(n+1): 1×2, 2×3, 3×4, 4×5; next is 5×6.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 3, 6, 11, 18, __.",
+          "options": [
+            "54",
+            "25",
+            "29",
+            "27"
+          ],
+          "answer": 3,
+          "explanation": "These are consecutive squares: 1², 2², 3², 4²; next is 5².",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 4, 5, 7, 10, 15, __.",
+          "options": [
+            "23",
+            "25",
+            "21",
+            "46"
+          ],
+          "answer": 0,
+          "explanation": "Each term after the first two is the sum of the previous two.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 83, 29, 11, 5, __.",
+          "options": [
+            "3",
+            "6",
+            "1",
+            "5"
+          ],
+          "answer": 0,
+          "explanation": "Each term is divided by 3.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 9, 16, 30, 58, __.",
+          "options": [
+            "112",
+            "116",
+            "114",
+            "228"
+          ],
+          "answer": 2,
+          "explanation": "Each term doubles.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 3, 5, 8, 12, __.",
+          "options": [
+            "19",
+            "15",
+            "17",
+            "34"
+          ],
+          "answer": 2,
+          "explanation": "The increments are +2, +3, +4; next increment is +5.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 12, 15, 21, 30, __.",
+          "options": [
+            "84",
+            "40",
+            "44",
+            "42"
+          ],
+          "answer": 3,
+          "explanation": "The increments are +3, +6, +9; next increment is +12.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 66, 34, 18, 10, __.",
+          "options": [
+            "6",
+            "8",
+            "12",
+            "4"
+          ],
+          "answer": 0,
+          "explanation": "Each term is halved.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 7, 10, 16, 28, __.",
+          "options": [
+            "50",
+            "54",
+            "104",
+            "52"
+          ],
+          "answer": 3,
+          "explanation": "Each term doubles.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 9, 13, 17, 21, __.",
+          "options": [
+            "23",
+            "25",
+            "50",
+            "27"
+          ],
+          "answer": 1,
+          "explanation": "The sequence increases by 4.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 6, 10, 16, 24, __.",
+          "options": [
+            "68",
+            "34",
+            "36",
+            "32"
+          ],
+          "answer": 1,
+          "explanation": "The terms are n(n+1): 1×2, 2×3, 3×4, 4×5; next is 5×6.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Find the next term: 5, 8, 13, 20, __.",
+          "options": [
+            "27",
+            "29",
+            "58",
+            "31"
+          ],
+          "answer": 1,
+          "explanation": "These are consecutive squares: 1², 2², 3², 4²; next is 5².",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Find the next term: 6, 7, 9, 12, 17, __.",
+          "options": [
+            "27",
+            "25",
+            "23",
+            "50"
+          ],
+          "answer": 1,
+          "explanation": "Each term after the first two is the sum of the previous two.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Find the next term: 85, 31, 13, 7, __.",
+          "options": [
+            "5",
+            "7",
+            "10",
+            "3"
+          ],
+          "answer": 0,
+          "explanation": "Each term is divided by 3.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Find the next term: 11, 18, 32, 60, __.",
+          "options": [
+            "114",
+            "116",
+            "118",
+            "232"
+          ],
+          "answer": 1,
+          "explanation": "Each term doubles.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Find the next term: 5, 7, 10, 14, __.",
+          "options": [
+            "17",
+            "38",
+            "19",
+            "21"
+          ],
+          "answer": 2,
+          "explanation": "The increments are +2, +3, +4; next increment is +5.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Find the next term: 14, 17, 23, 32, __.",
+          "options": [
+            "88",
+            "42",
+            "44",
+            "46"
+          ],
+          "answer": 2,
+          "explanation": "The increments are +3, +6, +9; next increment is +12.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Find the next term: 68, 36, 20, 12, __.",
+          "options": [
+            "6",
+            "16",
+            "8",
+            "10"
+          ],
+          "answer": 2,
+          "explanation": "Each term is halved.",
+          "difficulty": "HARD"
+        }
+      ]
+    },
+    {
+      "name": "Syllogism",
+      "estHours": 2,
+      "articles": [
+        {
+          "title": "Syllogisms: valid conclusions",
+          "content": "## Approach\n- Treat the statements as true, even if they conflict with real-world knowledge.\n- Use only information guaranteed by the statements.\n- Distinguish 'all', 'some', and 'none'; do not reverse an inclusion unless it is stated.\n\n**Method:** use set diagrams or carefully track which groups are included, overlapping, or disjoint.",
+          "type": "CONCEPT"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Statements: All architects are designers. All designers are creative. Which conclusion necessarily follows? [Set 1]",
+          "options": [
+            "All creative people are architects.",
+            "No architect is creative.",
+            "All architects are creative.",
+            "Some designers are not creative."
+          ],
+          "answer": 2,
+          "explanation": "The inclusion chain architects ⊆ designers ⊆ creative means all architects are creative.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: No pilots are careless. Some trainees are pilots. Which conclusion necessarily follows? [Set 2]",
+          "options": [
+            "No trainee is a pilot.",
+            "Some pilots are careless.",
+            "All trainees are pilots.",
+            "Some trainees are not careless."
+          ],
+          "answer": 3,
+          "explanation": "The trainees who are pilots cannot be careless.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: All orchids are plants. No plants are machines. Which conclusion necessarily follows? [Set 3]",
+          "options": [
+            "No orchid is a machine.",
+            "Some orchids are machines.",
+            "No orchid is a plant.",
+            "All machines are orchids."
+          ],
+          "answer": 0,
+          "explanation": "Orchids are plants, and plants are excluded from machines.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: Some editors are musicians. All musicians are patient. Which conclusion necessarily follows? [Set 4]",
+          "options": [
+            "No musician is patient.",
+            "All editors are musicians.",
+            "Some patient people are not musicians.",
+            "Some editors are patient."
+          ],
+          "answer": 3,
+          "explanation": "The editors who are musicians must be patient.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: All tablets are devices. Some devices are portable. Which conclusion necessarily follows? [Set 5]",
+          "options": [
+            "No tablet is a device.",
+            "All devices are tablets.",
+            "All tablets are devices.",
+            "All tablets are portable."
+          ],
+          "answer": 2,
+          "explanation": "The first conclusion is exactly a premise; the statement about some portable devices does not imply all tablets are portable.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: No reptiles are warm-blooded. All geckos are reptiles. Which conclusion necessarily follows? [Set 6]",
+          "options": [
+            "No gecko is a reptile.",
+            "All warm-blooded animals are geckos.",
+            "Some geckos are warm-blooded.",
+            "No gecko is warm-blooded."
+          ],
+          "answer": 3,
+          "explanation": "Geckos are reptiles, and reptiles are not warm-blooded.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: Some nurses are researchers. No researchers are careless. Which conclusion necessarily follows? [Set 7]",
+          "options": [
+            "Some nurses are not careless.",
+            "All nurses are researchers.",
+            "No nurse is a researcher.",
+            "Some researchers are careless."
+          ],
+          "answer": 0,
+          "explanation": "Nurses who are researchers cannot be careless.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: All copper objects are conductive. This wire is a copper object. Which conclusion necessarily follows? [Set 8]",
+          "options": [
+            "No copper object is conductive.",
+            "All conductive objects are copper.",
+            "This wire is conductive.",
+            "This wire is not conductive."
+          ],
+          "answer": 2,
+          "explanation": "The wire is copper, and all copper objects are conductive.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: All architects are designers. All designers are creative. Which conclusion necessarily follows? [Set 9]",
+          "options": [
+            "No architect is creative.",
+            "All creative people are architects.",
+            "Some designers are not creative.",
+            "All architects are creative."
+          ],
+          "answer": 3,
+          "explanation": "The inclusion chain architects ⊆ designers ⊆ creative means all architects are creative.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: No pilots are careless. Some trainees are pilots. Which conclusion necessarily follows? [Set 10]",
+          "options": [
+            "No trainee is a pilot.",
+            "Some pilots are careless.",
+            "Some trainees are not careless.",
+            "All trainees are pilots."
+          ],
+          "answer": 2,
+          "explanation": "The trainees who are pilots cannot be careless.",
+          "difficulty": "EASY"
+        },
+        {
+          "q": "Statements: All orchids are plants. No plants are machines. Which conclusion necessarily follows? [Set 11]",
+          "options": [
+            "Some orchids are machines.",
+            "All machines are orchids.",
+            "No orchid is a plant.",
+            "No orchid is a machine."
+          ],
+          "answer": 3,
+          "explanation": "Orchids are plants, and plants are excluded from machines.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: Some editors are musicians. All musicians are patient. Which conclusion necessarily follows? [Set 12]",
+          "options": [
+            "Some patient people are not musicians.",
+            "Some editors are patient.",
+            "No musician is patient.",
+            "All editors are musicians."
+          ],
+          "answer": 1,
+          "explanation": "The editors who are musicians must be patient.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: All tablets are devices. Some devices are portable. Which conclusion necessarily follows? [Set 13]",
+          "options": [
+            "No tablet is a device.",
+            "All devices are tablets.",
+            "All tablets are devices.",
+            "All tablets are portable."
+          ],
+          "answer": 2,
+          "explanation": "The first conclusion is exactly a premise; the statement about some portable devices does not imply all tablets are portable.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: No reptiles are warm-blooded. All geckos are reptiles. Which conclusion necessarily follows? [Set 14]",
+          "options": [
+            "No gecko is a reptile.",
+            "Some geckos are warm-blooded.",
+            "No gecko is warm-blooded.",
+            "All warm-blooded animals are geckos."
+          ],
+          "answer": 2,
+          "explanation": "Geckos are reptiles, and reptiles are not warm-blooded.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: Some nurses are researchers. No researchers are careless. Which conclusion necessarily follows? [Set 15]",
+          "options": [
+            "Some researchers are careless.",
+            "No nurse is a researcher.",
+            "All nurses are researchers.",
+            "Some nurses are not careless."
+          ],
+          "answer": 3,
+          "explanation": "Nurses who are researchers cannot be careless.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: All copper objects are conductive. This wire is a copper object. Which conclusion necessarily follows? [Set 16]",
+          "options": [
+            "This wire is not conductive.",
+            "All conductive objects are copper.",
+            "No copper object is conductive.",
+            "This wire is conductive."
+          ],
+          "answer": 3,
+          "explanation": "The wire is copper, and all copper objects are conductive.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: All architects are designers. All designers are creative. Which conclusion necessarily follows? [Set 17]",
+          "options": [
+            "All creative people are architects.",
+            "All architects are creative.",
+            "Some designers are not creative.",
+            "No architect is creative."
+          ],
+          "answer": 1,
+          "explanation": "The inclusion chain architects ⊆ designers ⊆ creative means all architects are creative.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: No pilots are careless. Some trainees are pilots. Which conclusion necessarily follows? [Set 18]",
+          "options": [
+            "All trainees are pilots.",
+            "Some pilots are careless.",
+            "Some trainees are not careless.",
+            "No trainee is a pilot."
+          ],
+          "answer": 2,
+          "explanation": "The trainees who are pilots cannot be careless.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: All orchids are plants. No plants are machines. Which conclusion necessarily follows? [Set 19]",
+          "options": [
+            "No orchid is a plant.",
+            "All machines are orchids.",
+            "No orchid is a machine.",
+            "Some orchids are machines."
+          ],
+          "answer": 2,
+          "explanation": "Orchids are plants, and plants are excluded from machines.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: Some editors are musicians. All musicians are patient. Which conclusion necessarily follows? [Set 20]",
+          "options": [
+            "No musician is patient.",
+            "Some patient people are not musicians.",
+            "Some editors are patient.",
+            "All editors are musicians."
+          ],
+          "answer": 2,
+          "explanation": "The editors who are musicians must be patient.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: All tablets are devices. Some devices are portable. Which conclusion necessarily follows? [Set 21]",
+          "options": [
+            "All tablets are devices.",
+            "All devices are tablets.",
+            "All tablets are portable.",
+            "No tablet is a device."
+          ],
+          "answer": 0,
+          "explanation": "The first conclusion is exactly a premise; the statement about some portable devices does not imply all tablets are portable.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: No reptiles are warm-blooded. All geckos are reptiles. Which conclusion necessarily follows? [Set 22]",
+          "options": [
+            "All warm-blooded animals are geckos.",
+            "No gecko is a reptile.",
+            "No gecko is warm-blooded.",
+            "Some geckos are warm-blooded."
+          ],
+          "answer": 2,
+          "explanation": "Geckos are reptiles, and reptiles are not warm-blooded.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: Some nurses are researchers. No researchers are careless. Which conclusion necessarily follows? [Set 23]",
+          "options": [
+            "Some nurses are not careless.",
+            "Some researchers are careless.",
+            "All nurses are researchers.",
+            "No nurse is a researcher."
+          ],
+          "answer": 0,
+          "explanation": "Nurses who are researchers cannot be careless.",
+          "difficulty": "MEDIUM"
+        },
+        {
+          "q": "Statements: All copper objects are conductive. This wire is a copper object. Which conclusion necessarily follows? [Set 24]",
+          "options": [
+            "This wire is not conductive.",
+            "No copper object is conductive.",
+            "All conductive objects are copper.",
+            "This wire is conductive."
+          ],
+          "answer": 3,
+          "explanation": "The wire is copper, and all copper objects are conductive.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Statements: All architects are designers. All designers are creative. Which conclusion necessarily follows? [Set 25]",
+          "options": [
+            "No architect is creative.",
+            "All creative people are architects.",
+            "Some designers are not creative.",
+            "All architects are creative."
+          ],
+          "answer": 3,
+          "explanation": "The inclusion chain architects ⊆ designers ⊆ creative means all architects are creative.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Statements: No pilots are careless. Some trainees are pilots. Which conclusion necessarily follows? [Set 26]",
+          "options": [
+            "All trainees are pilots.",
+            "Some trainees are not careless.",
+            "No trainee is a pilot.",
+            "Some pilots are careless."
+          ],
+          "answer": 1,
+          "explanation": "The trainees who are pilots cannot be careless.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Statements: All orchids are plants. No plants are machines. Which conclusion necessarily follows? [Set 27]",
+          "options": [
+            "No orchid is a machine.",
+            "All machines are orchids.",
+            "Some orchids are machines.",
+            "No orchid is a plant."
+          ],
+          "answer": 0,
+          "explanation": "Orchids are plants, and plants are excluded from machines.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Statements: Some editors are musicians. All musicians are patient. Which conclusion necessarily follows? [Set 28]",
+          "options": [
+            "All editors are musicians.",
+            "Some editors are patient.",
+            "Some patient people are not musicians.",
+            "No musician is patient."
+          ],
+          "answer": 1,
+          "explanation": "The editors who are musicians must be patient.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Statements: All tablets are devices. Some devices are portable. Which conclusion necessarily follows? [Set 29]",
+          "options": [
+            "All tablets are devices.",
+            "No tablet is a device.",
+            "All devices are tablets.",
+            "All tablets are portable."
+          ],
+          "answer": 0,
+          "explanation": "The first conclusion is exactly a premise; the statement about some portable devices does not imply all tablets are portable.",
+          "difficulty": "HARD"
+        },
+        {
+          "q": "Statements: No reptiles are warm-blooded. All geckos are reptiles. Which conclusion necessarily follows? [Set 30]",
+          "options": [
+            "Some geckos are warm-blooded.",
+            "All warm-blooded animals are geckos.",
+            "No gecko is a reptile.",
+            "No gecko is warm-blooded."
+          ],
+          "answer": 3,
+          "explanation": "Geckos are reptiles, and reptiles are not warm-blooded.",
+          "difficulty": "HARD"
+        }
+      ]
+    }
+  ]
+}

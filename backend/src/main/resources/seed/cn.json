@@ -1,0 +1,468 @@
+{
+"name": "Computer Networks",
+"category": "CORE",
+"description": "Layers, protocols, routing algorithms, and web architecture.",
+"weight": 10,
+"sortOrder": 1,
+"topics": [
+{
+"name": "OSI & TCP/IP Models",
+"estHours": 4,
+"articles": [
+{
+"title": "Network Architecture & Layering",
+"content": "## OSI Model (7 Layers)\n1. Application (Layer 7): User interaction interface (HTTP, FTP, SMTP, DNS, SSH).\n2. Presentation (Layer 6): Data representation, encryption, compression (TLS/SSL, JPEG, ASCII).\n3. Session (Layer 5): Inter-host communication session establishment and teardown (NetBIOS, RPC).\n4. Transport (Layer 6 -> 4): End-to-end communication, segmentation, error recovery, flow control (TCP, UDP).\n5. Network (Layer 3): Packet delivery across disparate networks, logical addressing, routing (IP, ICMP, ARP).\n6. Data Link (Layer 2): Node-to-node framing, physical MAC addressing, error detection via CRC (Ethernet, Wi-Fi 802.11).\n7. Physical (Layer 1): Raw bit transmission over physical medium (Copper cables, Fiber optics, Hubs).\n\n## TCP/IP Model (4 Layers)\n- Application: Combines OSI layers 5, 6, and 7.\n- Transport: Equivalent to OSI Layer 4.\n- Internet: Equivalent to OSI Layer 3.\n- Network Access: Combines OSI layers 1 and 2.\n\n## Network Devices & PDU Mapping\n| Layer | Protocol Data Unit (PDU) | Core Hardware / Addressing |\n|---|---|---|\n| Application | Data | Firewall (Layer 7), Gateway |\n| Transport | Segment (TCP) / Datagram (UDP) | Ports ($0$ to $65535$) |\n| Network | Packet | Router, Layer-3 Switch (IP Address) |\n| Data Link | Frame | Layer-2 Switch, Bridge (MAC Address) |\n| Physical | Bits | Hub, Repeater, Network Interface Card |",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "Routing of packets between independent networks happens at which OSI layer?",
+"options": ["Data Link Layer", "Network Layer", "Transport Layer", "Session Layer"],
+"answer": 1,
+"explanation": "The Network layer uses IP addresses to determine routing paths across interconnected networks.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the Protocol Data Unit (PDU) called at the Data Link layer?",
+"options": ["Packet", "Segment", "Frame", "Bit"],
+"answer": 2,
+"explanation": "At Layer 2, data is encapsulated into frames containing physical MAC addresses and CRC checksums.",
+"difficulty": "EASY"
+},
+{
+"q": "A traditional Layer-2 switch forwards data frames based on which type of address?",
+"options": ["IP Address", "MAC Address", "Port Number", "Subnet Mask"],
+"answer": 1,
+"explanation": "Layer-2 switches inspect destination MAC addresses within Ethernet frames to forward traffic.",
+"difficulty": "EASY"
+},
+{
+"q": "Which layer of the OSI model is directly responsible for data encryption, compression, and formatting?",
+"options": ["Application Layer", "Presentation Layer", "Session Layer", "Transport Layer"],
+"answer": 1,
+"explanation": "The Presentation layer handles formatting, syntax translation, encryption (e.g., TLS), and compression.",
+"difficulty": "EASY"
+},
+{
+"q": "At which layer of the TCP/IP model does the Internet Control Message Protocol (ICMP) operate?",
+"options": ["Network Access Layer", "Internet Layer", "Transport Layer", "Application Layer"],
+"answer": 1,
+"explanation": "ICMP provides error reporting and diagnostics (like ping) at the Internet Layer (OSI Layer 3).",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is the primary function of a network Hub?",
+"options": ["Filter traffic based on MAC addresses", "Route traffic between subnets", "Broadcast incoming bits to all other ports", "Assign dynamic IP addresses"],
+"answer": 2,
+"explanation": "A Hub operates at the Physical layer (Layer 1) and blindly floods bits received on one port to all other ports.",
+"difficulty": "EASY"
+},
+{
+"q": "Which OSI layer manages full-duplex/half-duplex session synchronization and checkpointing?",
+"options": ["Transport Layer", "Session Layer", "Presentation Layer", "Data Link Layer"],
+"answer": 1,
+"explanation": "The Session layer (Layer 5) manages dialogues, session checkpoints, and authorization tokens.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "How many layers are present in the standard TCP/IP original reference model?",
+"options": ["7", "5", "4", "3"],
+"answer": 2,
+"explanation": "The original TCP/IP reference architecture defined 4 layers: Network Access, Internet, Transport, and Application.",
+"difficulty": "EASY"
+},
+{
+"q": "Address Resolution Protocol (ARP) translates which address type to which address type?",
+"options": ["IP address to MAC address", "MAC address to IP address", "Domain name to IP address", "Port number to IP address"],
+"answer": 0,
+"explanation": "ARP maps a known Layer-3 IP address to an unknown Layer-2 MAC address on a local segment.",
+"difficulty": "EASY"
+},
+{
+"q": "Which header field is added at the Transport layer when using TCP?",
+"options": ["Source and Destination MAC addresses", "Source and Destination IP addresses", "Source and Destination Port numbers", "Preamble and Frame Check Sequence"],
+"answer": 2,
+"explanation": "The TCP header contains 16-bit source and destination port numbers for process-to-process multiplexing.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What happens during the encapsulation process as data moves down the OSI stack?",
+"options": ["Headers are removed at each layer", "Headers/Trailers are added at each layer", "Data is compressed into bits immediately", "Encryption is applied at every single layer"],
+"answer": 1,
+"explanation": "As data moves from Layer 7 to Layer 1, each lower layer adds its own control header (and trailer at Layer 2).",
+"difficulty": "EASY"
+},
+{
+"q": "Which protocol operates at the Data Link layer to prevent switching loops in Ethernet networks?",
+"options": ["OSPF", "BGP", "STP (Spanning Tree Protocol)", "RIP"],
+"answer": 2,
+"explanation": "STP operates at Layer 2 to disable redundant paths and eliminate broadcast storms/loops in switch topologies.",
+"difficulty": "HARD"
+},
+{
+"q": "What size is an IEEE 802.3 Ethernet MAC address?",
+"options": ["32 bits", "48 bits", "64 bits", "128 bits"],
+"answer": 1,
+"explanation": "MAC addresses are 48-bit (6-byte) hexadecimal hardware addresses burned into NICs.",
+"difficulty": "EASY"
+},
+{
+"q": "Which of the following devices isolates broadcast domains?",
+"options": ["Repeater", "Hub", "Unmanaged Switch", "Router"],
+"answer": 3,
+"explanation": "Routers operate at Layer 3 and do not forward Layer-2 broadcast frames by default, creating separate broadcast domains.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is the maximum theoretical payload size (MTU) of a standard Ethernet frame?",
+"options": ["64 bytes", "1500 bytes", "4096 bytes", "9000 bytes"],
+"answer": 1,
+"explanation": "Standard Ethernet networks have a Maximum Transmission Unit (MTU) size of $1500$ bytes for the IP packet payload.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which layer is responsible for end-to-end error control and flow control across host endpoints?",
+"options": ["Network Layer", "Transport Layer", "Data Link Layer", "Physical Layer"],
+"answer": 1,
+"explanation": "The Transport layer provides true end-to-end reliability, sliding window flow control, and segment sequencing.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Reverse ARP (RARP) was designed to map which of the following?",
+"options": ["MAC address to IP address", "IP address to Hostname", "Port number to Protocol", "IPv4 address to IPv6 address"],
+"answer": 0,
+"explanation": "RARP allows diskless workstations to discover their own IP address given their MAC hardware address.",
+"difficulty": "HARD"
+},
+{
+"q": "A Layer-3 switch combines the functionality of which two network components?",
+"options": ["Hub and Repeater", "Switch and Router", "Bridge and Modem", "Firewall and Gateway"],
+"answer": 1,
+"explanation": "Layer-3 switches combine hardware-based Layer-2 switching with high-speed Layer-3 IP routing capabilities.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which field in an IPv4 header prevents packets from circulating indefinitely in network loops?",
+"options": ["Time to Live (TTL)", "Header Checksum", "Explicit Congestion Notification (ECN)", "Fragment Offset"],
+"answer": 0,
+"explanation": "The 8-bit TTL field is decremented by $1$ at each router hop; when TTL reaches $0$, the packet is dropped.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "PDU decapsulation occurs in which direction?",
+"options": ["From Layer 7 down to Layer 1", "From Layer 1 up to Layer 7", "Directly from Layer 4 to Layer 2", "Simultaneously across all layers"],
+"answer": 1,
+"explanation": "Decapsulation happens on the receiving host, stripping headers layer-by-layer starting from Physical (1) up to Application (7).",
+"difficulty": "EASY"
+}
+]
+},
+{
+"name": "TCP vs UDP & Ports",
+"estHours": 4,
+"articles": [
+{
+"title": "Transport Layer Protocols & Socket Mechanics",
+"content": "## TCP (Transmission Control Protocol)\n- Properties: Connection-oriented, reliable, guarantees ordering, flow control, congestion control.\n- Connection Management:\n  - Three-Way Handshake: SYN $\to$ SYN-ACK $\to$ ACK.\n  - Four-Way Termination: FIN $\to$ ACK $\to$ FIN $\to$ ACK.\n- Control Mechanisms:\n  - Sliding Window Protocol: Dynamic flow control preventing sender from overwhelming receiver buffer.\n  - Congestion Control Algorithms: Slow Start, Congestion Avoidance, Fast Retransmit, Fast Recovery (cwnd window size).\n\n## UDP (User Datagram Protocol)\n- Properties: Connectionless, lightweight, zero connection overhead, no packet delivery or ordering guarantees.\n- Use Cases: Real-time media streaming, online multi-player gaming, DNS resolution, VoIP, NTP.\n\n## Port Allocation Ranges\n- Well-Known Ports ($0 - 1023$): System services (21 FTP, 22 SSH, 25 SMTP, 53 DNS, 80 HTTP, 443 HTTPS).\n- Registered Ports ($1024 - 49151$): Vendor applications (e.g., 3306 MySQL, 5432 PostgreSQL, 6379 Redis).\n- Dynamic/Private Ports ($49152 - 65535$): Ephemeral client-side connection ports.\n\n$$\text{Socket Identifier} = \text{IP Address} + \text{Port Number}$$",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "Which sequence of TCP flags correctly establishes a connection between client and server?",
+"options": ["SYN -> ACK -> SYN-ACK", "SYN -> SYN-ACK -> ACK", "FIN -> ACK -> FIN-ACK", "RST -> SYN -> ACK"],
+"answer": 1,
+"explanation": "The TCP 3-way handshake follows SYN (client), SYN-ACK (server response), and ACK (client confirmation).",
+"difficulty": "EASY"
+},
+{
+"q": "Which transport protocol is best suited for real-time multiplayer gaming where low latency is critical?",
+"options": ["TCP", "UDP", "SCTP", "FTP"],
+"answer": 1,
+"explanation": "UDP skips heavy handshaking and retransmissions, drastically reducing delay for time-sensitive data.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the allocated numerical range for well-known server ports?",
+"options": ["0 to 255", "0 to 1023", "1024 to 49151", "49152 to 65535"],
+"answer": 1,
+"explanation": "Ports 0 through 1023 are reserved by IANA for standard system services.",
+"difficulty": "EASY"
+},
+{
+"q": "What standard server port does SSH (Secure Shell) listen on by default?",
+"options": ["20", "21", "22", "23"],
+"answer": 2,
+"explanation": "SSH defaults to port 22. (Telnet uses 23, FTP uses 20/21).",
+"difficulty": "EASY"
+},
+{
+"q": "Which feature is natively provided by TCP but missing in UDP?",
+"options": ["Checksum calculation", "Multiplexing via ports", "Flow control via sliding window", "Datagram header delivery"],
+"answer": 2,
+"explanation": "TCP implements flow control using sliding windows to prevent buffer overflows at the receiver.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What action does a host take when it receives a TCP segment targeting a closed port?",
+"options": ["Ignores the segment silently", "Sends back a TCP flag with RST", "Sends back a UDP ICMP unreachable message", "Retransmits SYN"],
+"answer": 1,
+"explanation": "If a port is closed, the operating system responds with a TCP packet having the RST (Reset) flag set.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What does a socket pair consist of in a TCP connection?",
+"options": ["Source IP and Destination IP", "Source MAC and Destination MAC", "Source IP/Port and Destination IP/Port", "Source Port and Destination MAC"],
+"answer": 2,
+"explanation": "A full-duplex socket pair uniquely identifying a connection consists of (Source IP, Source Port, Destination IP, Destination Port).",
+"difficulty": "MEDIUM"
+},
+{
+"q": "In TCP congestion control, what happens immediately after a packet timeout occurs?",
+"options": ["Congestion window size increases exponentially", "Congestion window size drops to 1 MSS", "Threshold is doubled", "Connection transitions to TIME_WAIT"],
+"answer": 1,
+"explanation": "Upon a heavy timeout loss, TCP sets its congestion window (`cwnd`) back to $1$ Maximum Segment Size (MSS) and enters Slow Start.",
+"difficulty": "HARD"
+},
+{
+"q": "Which TCP state indicates that the local endpoint has received a FIN from the remote end and sent an ACK?",
+"options": ["FIN_WAIT_1", "ESTABLISHED", "CLOSE_WAIT", "TIME_WAIT"],
+"answer": 2,
+"explanation": "In `CLOSE_WAIT`, the local host has acknowledged the remote host's `FIN` request and is waiting for the local application to close.",
+"difficulty": "HARD"
+},
+{
+"q": "What is the purpose of the TCP `TIME_WAIT` state on the active closer?",
+"options": ["Allow active streams to send faster", "Ensure final ACK reaches remote host and clear delayed segments", "Wait for dynamic IP address renewal", "Keep port open indefinitely"],
+"answer": 1,
+"explanation": "`TIME_WAIT` (typically 2MSL) ensures the remote side receives the final `ACK` and prevents old duplicate packets from corrupting new connections.",
+"difficulty": "HARD"
+},
+{
+"q": "What is the header overhead size of a minimum basic UDP packet?",
+"options": ["8 bytes", "20 bytes", "32 bytes", "64 bytes"],
+"answer": 0,
+"explanation": "UDP headers are simple and fixed at $8$ bytes (Source Port, Destination Port, Length, Checksum). TCP headers are at least $20$ bytes.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which UDP port is used by DNS queries by default?",
+"options": ["53", "67", "69", "123"],
+"answer": 0,
+"explanation": "Standard DNS queries and responses run over UDP port 53 (switching to TCP 53 for zone transfers or large responses).",
+"difficulty": "EASY"
+},
+{
+"q": "What is the default port for PostgreSQL database connections?",
+"options": ["3306", "5432", "6379", "27017"],
+"answer": 1,
+"explanation": "PostgreSQL listens on port 5432. MySQL uses 3306, Redis uses 6379, MongoDB uses 27017.",
+"difficulty": "EASY"
+},
+{
+"q": "How does TCP handle out-of-order segments at the receiver?",
+"options": ["Discards them immediately", "Buffers them and uses Sequence Numbers to reconstruct order", "Requests full network restart", "Converts them into UDP datagrams"],
+"answer": 1,
+"explanation": "TCP tracks 32-bit Sequence Numbers, storing out-of-order segments in receiver buffers until missing segments arrive.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What protocol is commonly used by network administrators for querying real-time system clock synchronization?",
+"options": ["SNMP", "NTP", "DHCP", "TFTP"],
+"answer": 1,
+"explanation": "NTP (Network Time Protocol) runs over UDP port 123 to synchronize clocks across nodes.",
+"difficulty": "EASY"
+},
+{
+"q": "What TCP mechanism is triggered when $3$ duplicate ACKs are received by the sender?",
+"options": ["Slow Start restart", "Fast Retransmit", "Connection Reset", "Sliding Window Freeze"],
+"answer": 1,
+"explanation": "Three duplicate ACKs signal isolated packet loss without waiting for a retransmission timer timeout, triggering Fast Retransmit.",
+"difficulty": "HARD"
+},
+{
+"q": "Which field in the TCP header is used to signal the receiver's available buffer capacity?",
+"options": ["Sequence Number", "Acknowledgment Number", "Window Size", "Urgent Pointer"],
+"answer": 2,
+"explanation": "The 16-bit Receive Window field communicates how many bytes of data the receiving node can currently buffer.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which port does HTTPS use for SSL/TLS encrypted traffic?",
+"options": ["80", "8080", "443", "8443"],
+"answer": 2,
+"explanation": "HTTPS secure web communication operates on standard port 443.",
+"difficulty": "EASY"
+},
+{
+"q": "What type of attack floods target IP ports with TCP `SYN` packets without sending final `ACK`s?",
+"options": ["Man-in-the-Middle Attack", "SYN Flood Attack", "SQL Injection", "DNS Poisoning"],
+"answer": 1,
+"explanation": "A SYN flood fills the server's backlog queue with half-open connections, exhausting kernel memory resources.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Does UDP perform flow control or congestion control?",
+"options": ["Performs Flow Control only", "Performs Congestion Control only", "Performs both", "Performs neither"],
+"answer": 3,
+"explanation": "UDP provides no flow control or congestion control mechanisms; applications must implement them at higher layers if needed.",
+"difficulty": "EASY"
+}
+]
+},
+{
+"name": "HTTP, DNS & Web Security",
+"estHours": 5,
+"articles": [
+{
+"title": "Application Layer Web Architecture & Security Protocols",
+"content": "## Web Request Lifecycle (URL Execution)\n1. **DNS Lookup**: Local Cache $\to$ `/etc/hosts` $\to$ Recursive Resolver $\to$ Root Server $\to$ TLD Server $\to$ Authoritative Name Server.\n2. **TCP Connection**: 3-Way Handshake on target IP (port 80/443).\n3. **TLS Handshake (HTTPS)**: Cipher suite negotiation, Certificate validation, Key Exchange (ECDHE), Session Symmetric Key generation.\n4. **HTTP Request & Response**: Client sends Method, Path, Headers $\to$ Server replies with Status Code, Response Headers, Body.\n5. **DOM Rendering**: HTML parsing, CSSOM tree building, JS execution.\n\n## HTTP Methods & Properties\n- **Idempotency**: Repeated execution yields same server state (`GET`, `PUT`, `DELETE`, `HEAD` are idempotent; `POST` is not).\n- **HTTP Status Codes**:\n  - `1xx`: Informational (`101 Switching Protocols`).\n  - `2xx`: Success (`200 OK`, `201 Created`, `204 No Content`).\n  - `3xx`: Redirection (`301 Moved Permanently`, `302 Found`, `304 Not Modified`).\n  - `4xx`: Client Error (`400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found`).\n  - `5xx`: Server Error (`500 Internal Error`, `502 Bad Gateway`, `503 Service Unavailable`).\n\n## Core Security Concepts\n- **Symmetric Encryption**: Same key used for encryption/decryption (AES-GCM, fast).\n- **Asymmetric Encryption**: Public key encrypts/verifies, Private key decrypts/signs (RSA, ECC).\n- **XSS vs CSRF**:\n  - **XSS (Cross-Site Scripting)**: Injected malicious scripts execute in victim browser context.\n  - **CSRF (Cross-Site Request Forgery)**: Unauthorized commands executed on behalf of authenticated user via automated cookies.",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "Which HTTP status code indicates a permanently redirected URL resource?",
+"options": ["200", "301", "302", "404"],
+"answer": 1,
+"explanation": "301 stands for Moved Permanently, directing clients and search engines to cache the new location.",
+"difficulty": "EASY"
+},
+{
+"q": "Which DNS record type maps a domain name directly to an IPv4 address?",
+"options": ["AAAA", "CNAME", "A Record", "MX Record"],
+"answer": 2,
+"explanation": "An 'A' record points a domain name to a 32-bit IPv4 address. 'AAAA' points to an IPv6 address.",
+"difficulty": "EASY"
+},
+{
+"q": "Which HTTP method is explicitly designed to be NON-idempotent?",
+"options": ["GET", "PUT", "POST", "DELETE"],
+"answer": 2,
+"explanation": "POST creates new records; executing it multiple times creates multiple distinct entity resources.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What key component makes HTTPS secure compared to basic plain HTTP?",
+"options": ["TCP sliding window", "TLS/SSL encryption handshake", "UDP framing", "DNSSEC validation"],
+"answer": 1,
+"explanation": "HTTPS layers HTTP over TLS, providing encryption, data integrity, and server authentication.",
+"difficulty": "EASY"
+},
+{
+"q": "What cookie attribute prevents client-side JavaScript (e.g., `document.cookie`) from accessing sensitive session tokens?",
+"options": ["Secure", "HttpOnly", "SameSite=Strict", "Domain"],
+"answer": 1,
+"explanation": "The `HttpOnly` flag hides cookies from browser scripts, protecting against XSS session hijacking.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which status code represents a client error when a valid user lacks permission for a resource despite being authenticated?",
+"options": ["401 Unauthorized", "403 Forbidden", "404 Not Found", "400 Bad Request"],
+"answer": 1,
+"explanation": "403 Forbidden means the server understands the caller identity but refuses authorization.",
+"difficulty": "EASY"
+},
+{
+"q": "In asymmetric cryptography used during TLS handshakes, what is the public key primarily used for?",
+"options": ["Decrypting data signed by recipient", "Encrypting session data or verifying signatures", "Storing session logs", "Bypassing DNS servers"],
+"answer": 1,
+"explanation": "The public key encrypts sensitive data (or validates digital signatures), which can only be decrypted by the matching private key.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which type of DNS server holds the official binding records for a specific domain zone?",
+"options": ["Recursive Resolver", "Root Name Server", "Authoritative Name Server", "TLD Name Server"],
+"answer": 2,
+"explanation": "Authoritative Name Servers are the final authority holding actual DNS records (A, CNAME, MX) for domains.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What security vulnerability occurs when an attacker tricks a user's browser into sending authenticated requests to a vulnerable web application?",
+"options": ["Cross-Site Scripting (XSS)", "Cross-Site Request Forgery (CSRF)", "SQL Injection", "Buffer Overflow"],
+"answer": 1,
+"explanation": "CSRF exploits implicit browser cookie inclusion during cross-origin state-changing requests.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which HTTP status code is returned when a reverse proxy server receives an invalid or timed-out response from an upstream server?",
+"options": ["500 Internal Server Error", "502 Bad Gateway", "503 Service Unavailable", "504 Gateway Timeout"],
+"answer": 1,
+"explanation": "502 Bad Gateway indicates that a gateway/proxy received an invalid upstream server payload.",
+"difficulty": "HARD"
+},
+{
+"q": "What DNS record type functions as an alias pointing one domain name to another domain name?",
+"options": ["TXT", "CNAME", "PTR", "NS"],
+"answer": 1,
+"explanation": "CNAME (Canonical Name) aliases a domain to another domain string instead of an explicit IP.",
+"difficulty": "EASY"
+},
+{
+"q": "Which HTTP request header informs the server about the original domain originating a Cross-Origin Request?",
+"options": ["Host", "User-Agent", "Origin", "Referer"],
+"answer": 2,
+"explanation": "Browsers automatically attach the `Origin` header during CORS requests to allow servers to evaluate cross-domain policies.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which HTTP version introduced full binary frame multiplexing over a single persistent TCP connection?",
+"options": ["HTTP/1.0", "HTTP/1.1", "HTTP/2", "HTTP/0.9"],
+"answer": 2,
+"explanation": "HTTP/2 replaced text lines with binary frames, allowing concurrent request multiplexing over one connection.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What HTTP status code corresponds to '304 Not Modified'?",
+"options": ["Resource deleted", "Cached version is valid, no body sent", "Client request format error", "Temporary server reboot"],
+"answer": 1,
+"explanation": "304 instructs the browser to use its cached copy, saving network bandwidth by returning an empty response body.",
+"difficulty": "EASY"
+},
+{
+"q": "What security header forces browsers to establish connection exclusively via HTTPS for a given domain?",
+"options": ["Content-Security-Policy", "X-Frame-Options", "Strict-Transport-Security (HSTS)", "Access-Control-Allow-Origin"],
+"answer": 2,
+"explanation": "HSTS instructs browsers to automatically convert all HTTP requests to HTTPS before transmitting.",
+"difficulty": "HARD"
+},
+{
+"q": "What attack vector allows attackers to inject malicious script code into web pages viewed by other users?",
+"options": ["CSRF", "XSS", "DDoS", "Session Fixation"],
+"answer": 1,
+"explanation": "Cross-Site Scripting (XSS) executes attacker JS scripts within the trust context of a user's browser.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which DNS record type specifies the mail servers responsible for accepting incoming email for a domain?",
+"options": ["SOA", "MX", "PTR", "AAAA"],
+"answer": 1,
+"explanation": "MX (Mail Exchange) records specify email handling hostnames and priorities for a domain.",
+"difficulty": "EASY"
+},
+{
+"q": "HTTP/3 relies on which underlying Transport layer protocol instead of TCP?",
+"options": ["UDP (via QUIC)", "SCTP", "DCCP", "IPsec"],
+"answer": 0,
+"explanation": "HTTP/3 uses QUIC running over UDP to eliminate TCP head-of-line blocking and speed up handshakes.",
+"difficulty": "HARD"
+},
+{
+"q": "What is the primary role of a Certificate Authority (CA) in Public Key Infrastructure (PKI)?",
+"options": ["Assign IP addresses to web servers", "Digitally sign and validate SSL/TLS server certificates", "Block incoming DDoS traffic", "Manage DNS A records"],
+"answer": 1,
+"explanation": "CAs verify domain ownership and digitally sign certificates, enabling browsers to verify server identities.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What HTTP method carries request metadata parameters inside the request body while requesting resource modification?",
+"options": ["GET", "PATCH", "HEAD", "OPTIONS"],
+"answer": 1,
+"explanation": "PATCH applies partial updates to a resource, carrying modification details inside the request body.",
+"difficulty": "MEDIUM"
+}
+]
+}
+]
+}

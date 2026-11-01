@@ -1,0 +1,468 @@
+{
+"name": "Operating Systems",
+"category": "CORE",
+"description": "Process control, scheduling, inter-process communication, memory virtualization, and storage.",
+"weight": 10,
+"sortOrder": 3,
+"topics": [
+{
+"name": "Process Management & CPU Scheduling",
+"estHours": 4,
+"articles": [
+{
+"title": "Process State Models & Scheduling Algorithms",
+"content": "## Process vs Thread\n - **Process**: Program in execution with isolated memory address space (Text, Data, Heap, Stack).\n- **Thread**: Lightweight Unit of Execution sharing code, data, and OS resources within parent process (has own PC, Registers, Stack).\n\n## Process State Transitions\n`New` $\to$ `Ready` $leftrightarrow$ `Running` $\to$ `Terminated` (plus `Waiting/Blocked` state for I/O operations).\n\n## CPU Scheduling Metrics\n- **Turnaround Time** = $\text{Completion Time} - \text{Arrival Time}$\n- **Waiting Time** = $\text{Turnaround Time} - \text{Burst Time}$\n- **Response Time** = $\text{First Execution Time} - \text{Arrival Time}$\n\n## Scheduling Algorithms\n- **FCFS (First-Come First-Served)**: Non-preemptive, suffers from **Convoy Effect**.\n- **SJF (Shortest Job First)**: Optimal minimum average waiting time (Preemptive version = SRTF).\n- **Round Robin (RR)**: Preemptive based on Time Quantum ($q$). High $q \to$ FCFS; Low $q \to$ Context Switch overhead.\n- **Priority Scheduling**: Suffer from **Starvation** (resolved using **Aging**).",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "What OS data structure maintains context information for a specific process (PID, CPU registers, memory limits)?",
+"options": ["File Control Block (FCB)", "Process Control Block (PCB)", "Page Table Entry", "Inode"],
+"answer": 1,
+"explanation": "The Process Control Block (PCB) stores all metadata, register states, and accounting info for a process.",
+"difficulty": "EASY"
+},
+{
+"q": "What performance issue occurs in FCFS scheduling when long CPU-bound processes delay short I/O-bound processes?",
+"options": ["Starvation", "Convoy Effect", "Thrashing", "Priority Inversion"],
+"answer": 1,
+"explanation": "The Convoy Effect occurs in non-preemptive FCFS when small processes queue up behind a massive CPU-bound task.",
+"difficulty": "EASY"
+},
+{
+"q": "Which CPU scheduling algorithm guarantees minimal average waiting time for a given set of processes?",
+"options": ["Round Robin", "Shortest Job First (SJF)", "First-Come First-Served", "Priority Scheduling"],
+"answer": 1,
+"explanation": "SJF is mathematically proven to produce the lowest average waiting time by scheduling shorter jobs first.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "In Round Robin CPU scheduling, what happens if the allocated time quantum is extremely large?",
+"options": ["Degenerates into First-Come First-Served (FCFS)", "Causes thrashing", "Increases context switches to infinity", "Triggers deadlock"],
+"answer": 0,
+"explanation": "If the time quantum exceeds the longest process burst time, no preemption takes place, reducing RR to FCFS.",
+"difficulty": "EASY"
+},
+{
+"q": "What mechanism allows low-priority processes to gradually increase their priority over time to prevent starvation?",
+"options": ["Paging", "Aging", "Preemption", "Caching"],
+"answer": 1,
+"explanation": "Aging dynamically increases process priority while waiting in the ready queue, preventing indefinite starvation.",
+"difficulty": "EASY"
+},
+{
+"q": "Which memory segment contains dynamically allocated memory requested at runtime (e.g., via `malloc()` or `new`)?",
+"options": ["Text Segment", "Data Segment", "Stack", "Heap"],
+"answer": 3,
+"explanation": "The Heap space manages dynamic memory allocations during program execution.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the key functional difference between a Process and a Thread?",
+"options": ["Threads do not execute code", "Processes share address space, threads have isolated memory", "Threads within a process share memory address space; processes have isolated address spaces", "Processes cannot be scheduled by OS"],
+"answer": 2,
+"explanation": "Threads share their parent process's memory space (heap/global variables), while processes are strictly isolated.",
+"difficulty": "EASY"
+},
+{
+"q": "What happens during a context switch?",
+"options": ["CPU saves running process state into PCB and restores state of newly scheduled process", "OS deletes running process PCB", "Memory is wiped clean", "I/O devices are reset"],
+"answer": 0,
+"explanation": "Context switching involves saving current CPU register/state context into its PCB and loading the target process PCB state.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What formula calculates the Waiting Time of a process?",
+"options": ["Completion Time - Arrival Time", "Turnaround Time - Burst Time", "Burst Time - Response Time", "Arrival Time + Completion Time"],
+"answer": 1,
+"explanation": "Waiting Time = Turnaround Time minus actual execution Burst Time.",
+"difficulty": "EASY"
+},
+{
+"q": "Which state transition is triggered when an executing process issues a blocking I/O request?",
+"options": ["Running -> Ready", "Running -> Waiting (Blocked)", "Waiting -> Ready", "Running -> Terminated"],
+"answer": 1,
+"explanation": "A process moves from Running to Waiting/Blocked when it requests an I/O operation or system event.",
+"difficulty": "EASY"
+},
+{
+"q": "What type of kernel process execution cannot be interrupted by the OS scheduler once started?",
+"options": ["Preemptive Scheduling", "Non-Preemptive Scheduling", "Round Robin", "Multilevel Queue"],
+"answer": 1,
+"explanation": "Under non-preemptive scheduling, a CPU remains allocated to a process until it voluntarily terminates or blocks for I/O.",
+"difficulty": "EASY"
+},
+{
+"q": "Which POSIX system call creates a new child process by cloning the calling parent process in Linux?",
+"options": ["exec()", "fork()", "wait()", "exit()"],
+"answer": 1,
+"explanation": "`fork()` creates a child process duplicate of the parent process.",
+"difficulty": "EASY"
+},
+{
+"q": "What status does a process enter when it terminates, but its parent has not yet called `wait()` to read its exit code?",
+"options": ["Orphan Process", "Zombie Process", "Daemon Process", "Foreground Process"],
+"answer": 1,
+"explanation": "A Zombie process has completed execution but retains an entry in the process table so its parent can read its status.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is an Orphan Process in Unix systems?",
+"options": ["A process with no child threads", "A process whose parent process terminated while it is still running", "A process running on core 0", "A blocked thread"],
+"answer": 1,
+"explanation": "An Orphan process continues running after its parent dies; it is adopted by `init` (PID 1) or `systemd`.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What metric represents the total number of processes completed by the system per unit of time?",
+"options": ["Latency", "Throughput", "Response Time", "Turnaround Time"],
+"answer": 1,
+"explanation": "Throughput measures completed process count per unit time.",
+"difficulty": "EASY"
+},
+{
+"q": "Preemptive Shortest Job First (SJF) scheduling is also known as:",
+"options": ["Shortest Remaining Time First (SRTF)", "First-Come First-Served (FCFS)", "Priority Round Robin", "Multi-Level Feedback Queue"],
+"answer": 0,
+"explanation": "SRTF is the preemptive variant of SJF, switching CPUs whenever a newly arrived process has a shorter remaining burst time.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is the primary function of the OS Long-Term Scheduler (Job Scheduler)?",
+"options": ["Selects processes from ready queue to execute on CPU", "Selects programs from mass storage pool and loads them into memory ready queue", "Swaps processes between RAM and disk", "Manages hardware interrupts"],
+"answer": 1,
+"explanation": "The Long-Term Scheduler determines degree of multiprogramming by moving jobs from disk queue into memory.",
+"difficulty": "HARD"
+},
+{
+"q": "Which memory region inside a process stack frame stores local function variables and return addresses?",
+"options": ["Heap", "Stack", "BSS Segment", "Code Segment"],
+"answer": 1,
+"explanation": "The Stack manages call frames containing function arguments, local variables, and return addresses.",
+"difficulty": "EASY"
+},
+{
+"q": "What scheduling queue holds processes residing in main memory, ready and waiting to be allocated a CPU?",
+"options": ["Job Queue", "Device Queue", "Ready Queue", "Blocked Queue"],
+"answer": 2,
+"explanation": "The Ready Queue stores all processes in main memory ready for CPU allocation.",
+"difficulty": "EASY"
+},
+{
+"q": "In a Multi-Level Feedback Queue (MLFQ) scheduler, how are processes managed?",
+"options": ["Processes remain in a single static queue forever", "Processes can move between queues based on CPU burst history and behavior", "Jobs are executed strictly in order of PID", "Only 2 processes run at a time"],
+"answer": 1,
+"explanation": "MLFQ dynamically adjusts process queue assignments, demoting CPU-heavy processes and promoting I/O-bound processes.",
+"difficulty": "HARD"
+}
+]
+},
+{
+"name": "Synchronization & Deadlocks",
+"estHours": 4,
+"articles": [
+{
+"title": "Process Synchronization, Critical Sections & Deadlocks",
+"content": "## Critical Section Problem\nA code segment accessing shared resources that must not be executed by more than one process simultaneously.\n- **Requirements**: Mutual Exclusion, Progress, Bounded Waiting.\n\n## Synchronization Primitives\n- **Mutex**: Binary lock (`lock()`, `unlock()`) owned by a single thread.\n- **Semaphore**: Integer variable accessed via atomic operations `wait()` ($P$) and `signal()` ($V$).\n  - **Counting Semaphore**: Controls access to finite resource pool ($N$ units).\n  - **Binary Semaphore**: Functions like a Mutex.\n- **Classical Problems**: Producer-Consumer (Bounded Buffer), Readers-Writers, Dining Philosophers.\n\n## Deadlock Characterization\nFour **necessary and sufficient** conditions (Coffman Conditions):\n1. **Mutual Exclusion**: Non-shareable resource access.\n2. **Hold and Wait**: Process holding resources requests additional locks.\n3. **No Preemption**: Resources cannot be forcibly revoked.\n4. **Circular Wait**: Closed chain of processes waiting for next process's resource.\n\n## Deadlock Handling Strategies\n- **Prevention**: Invalidate at least one Coffman condition.\n- **Avoidance**: Dynamic safety checks (e.g., **Banker's Algorithm** with Safe Sequence).\n- **Detection & Recovery**: Maintain Allocation/Request graphs; kill process or preempt resources.",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "How many Coffman conditions must hold simultaneously for a system deadlock to occur?",
+"options": ["Any 1 condition", "Any 2 conditions", "Any 3 conditions", "All 4 conditions"],
+"answer": 3,
+"explanation": "Deadlock requires all 4 Coffman conditions (Mutual Exclusion, Hold & Wait, No Preemption, Circular Wait) to hold concurrently.",
+"difficulty": "EASY"
+},
+{
+"q": "What condition requires that at least one resource be held in a non-shareable mode?",
+"options": ["Hold and Wait", "Mutual Exclusion", "No Preemption", "Circular Wait"],
+"answer": 1,
+"explanation": "Mutual Exclusion states that only one process at a time can access the non-shareable resource.",
+"difficulty": "EASY"
+},
+{
+"q": "What operation decrements the integer value of a counting semaphore?",
+"options": ["signal() or V()", "wait() or P()", "post()", "release()"],
+"answer": 1,
+"explanation": "The `wait()` (P) operation decrements the semaphore value; if value becomes negative, caller blocks.",
+"difficulty": "EASY"
+},
+{
+"q": "Banker's Algorithm is primarily used by Operating Systems for deadlock:",
+"options": ["Prevention", "Avoidance", "Detection", "Recovery"],
+"answer": 1,
+"explanation": "Banker's Algorithm is a classic Deadlock Avoidance algorithm that tests for safe states before granting resource requests.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What condition is violated if a low-priority thread holds a lock needed by a high-priority thread, and a medium-priority thread preempts the low-priority thread?",
+"options": ["Starvation", "Priority Inversion", "Thrashing", "Convoy Effect"],
+"answer": 1,
+"explanation": "Priority Inversion occurs when a high-priority task waits on a low-priority task that is preempted by a medium-priority task.",
+"difficulty": "HARD"
+},
+{
+"q": "What mechanism resolves Priority Inversion by temporarily raising a lock-holder's priority to match the highest waiting thread?",
+"options": ["Priority Inheritance Protocol", "Banker's Algorithm", "Peterson's Solution", "Spinlocks"],
+"answer": 0,
+"explanation": "Priority Inheritance boosts the lower-priority thread's effective priority to that of the highest-priority waiting thread until the lock is released.",
+"difficulty": "HARD"
+},
+{
+"q": "What is a Spinlock?",
+"options": ["A lock that puts threads to sleep immediately", "A lock where a thread loops repeatedly ('busy-waits') checking lock availability", "A hardware component in disk drives", "A semaphore initialized to infinity"],
+"answer": 1,
+"explanation": "Spinlocks busy-wait in a loop continuously checking a lock condition, useful for short-duration locks on multi-core systems.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "In software process synchronization, Peterson's Algorithm satisfies which criteria for 2 processes?",
+"options": ["Mutual Exclusion only", "Mutual Exclusion and Progress, but not Bounded Waiting", "Mutual Exclusion, Progress, and Bounded Waiting", "Deadlock avoidance only"],
+"answer": 2,
+"explanation": "Peterson's algorithm is a classical software solution that guarantees all 3 critical section requirements for 2 processes.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What type of graph models system resource allocation and process requests to detect deadlocks?",
+"options": ["Resource Allocation Graph (RAG)", "Wait-For Graph", "B-Tree", "Directed Acyclic Graph"],
+"answer": 0,
+"explanation": "A Resource Allocation Graph (RAG) uses nodes for processes/resources and edges for requests/allocations to analyze deadlock states.",
+"difficulty": "EASY"
+},
+{
+"q": "If a Resource Allocation Graph contains a cycle AND each resource class has strictly ONE instance, does a deadlock exist?",
+"options": ["Yes, definitely", "No, never", "Only if aging is used", "Cannot be determined"],
+"answer": 0,
+"explanation": "In single-instance RAGs, a cycle is both a necessary and sufficient condition for deadlock.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What fundamental flaw causes race conditions during shared data access?",
+"options": ["Lack of disk space", "Unsynchronized non-atomic concurrent read-modify-write execution sequences", "Using static variables", "Memory pagination"],
+"answer": 1,
+"explanation": "Race conditions occur when the final output depends on unpredictable thread execution timing without proper atomic synchronization.",
+"difficulty": "EASY"
+},
+{
+"q": "Which strategy breaks the 'Hold and Wait' condition to prevent deadlocks?",
+"options": ["Forcing processes to request all required resources at once before starting", "Preempting resources from high-priority processes", "Allowing infinite resources", "Ordering resource IDs strictly"],
+"answer": 0,
+"explanation": "Requiring a process to request and receive all resources simultaneously ensures it never holds one while waiting for another.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Which strategy breaks the 'Circular Wait' condition for deadlock prevention?",
+"options": ["Imposing a strict linear numerical ordering on all resource acquisitions", "Disabling interrupts", "Using semaphores instead of mutexes", "Increasing CPU clock speed"],
+"answer": 0,
+"explanation": "Assigning global integer IDs to resources and enforcing lock acquisition in strictly ascending order eliminates circular wait cycles.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is the key functional difference between a Mutex and a Binary Semaphore?",
+"options": ["Mutex has ownership concept (only acquiring thread can unlock); Semaphore can be signaled by any thread", "Mutex uses integer counters up to 100", "Semaphores cannot block threads", "Mutex works only in user-space"],
+"answer": 0,
+"explanation": "A Mutex enforces thread ownership (locking thread must unlock). Semaphores can be posted/signaled by any thread.",
+"difficulty": "HARD"
+},
+{
+"q": "In the Dining Philosophers Problem, what issue arises if all 5 philosophers pick up their left fork simultaneously?",
+"options": ["Starvation of philosopher 0", "Deadlock", "Memory leak", "Priority Inversion"],
+"answer": 1,
+"explanation": "If all pick up their left fork, every philosopher holds one fork while waiting indefinitely for the right fork (Circular Wait deadlock).",
+"difficulty": "EASY"
+},
+{
+"q": "What is a 'Safe State' in the context of Deadlock Avoidance algorithms?",
+"options": ["A state where no process uses CPU", "A state from which the system can allocate resources to all processes without triggering a deadlock", "A state with zero locks", "A state where memory is backed up"],
+"answer": 1,
+"explanation": "A state is safe if there exists a execution sequence ($P_1, P_2, dots, P_n$) allowing all processes to finish without deadlocking.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What hardware CPU instruction provides atomic read-modify-write support for synchronization primitives?",
+"options": ["Test-And-Set (or Compare-And-Swap)", "MOV", "JMP", "ADD"],
+"answer": 0,
+"explanation": "Instructions like Test-And-Set or Compare-And-Swap (CAS) execute atomically in hardware, forming the baseline for spinlocks and mutexes.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What classical synchronization problem models resource sharing among concurrent processes writing data and processes reading data?",
+"options": ["Producer-Consumer Problem", "Readers-Writers Problem", "Dining Philosophers Problem", "Sleeping Barber Problem"],
+"answer": 1,
+"explanation": "The Readers-Writers problem manages concurrent data access, ensuring writers get exclusive access while readers share access.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the primary drawback of using atomic Spinlocks on single-core CPU architectures?",
+"options": ["Triggers hard drive failure", "Wastes valuable CPU clock cycles while busy-waiting", "Disables operating system kernel", "Corrupts RAM memory"],
+"answer": 1,
+"explanation": "On single-core processors, a spinlock busy-waits, consuming 100% of the CPU while preventing the lock-holding thread from running.",
+"difficulty": "EASY"
+},
+{
+"q": "Ignoring deadlock altogether under the assumption that it occurs very rarely is known as the:",
+"options": ["Banker's Strategy", "Ostrich Algorithm", "Peterson Algorithm", "Recovery Scheme"],
+"answer": 1,
+"explanation": "The Ostrich Algorithm ignores potential deadlocks if their occurrence is rare and the performance cost of prevention/detection is too high.",
+"difficulty": "EASY"
+}
+]
+},
+{
+"name": "Memory Management & Virtual Memory",
+"estHours": 5,
+"articles": [
+{
+"title": "Virtual Memory, Paging & Translation Mechanics",
+"content": "## Address Translation Mechanics\nVirtual Address is split into **Page Number ($p$)** and **Page Offset ($d$)**.\n- **MMU (Memory Management Unit)** translates Logical Virtual Address $\to$ Physical Physical Address via **Page Table** lookup.\n- **TLB (Translation Lookaside Buffer)**: High-speed associative hardware cache storing recent virtual-to-physical address mappings.\n\n$$\text{Effective Access Time (EAT)} = h \times (t_{tlb} + t_{ram}) + (1 - h) \times (t_{tlb} + 2 \times t_{ram})$$\n*(where $h$ is TLB hit ratio)*.\n\n## Page Replacement Algorithms\n- FIFO: Replace oldest loaded page. Suffer from Belady's Anomaly (page faults increase as allocated frame count increases).\n- LRU (Least Recently Used): Replace page unused for longest duration (Optimal practical approximation).\n- Optimal (OPT / Belady's): Replace page that won't be used for longest future duration (Theoretical benchmark).\n- Clock (Second Chance): Approximates LRU using a reference bit pointer.\n\n## Memory Fragmentation & Thrashing\n- Internal Fragmentation: Unused memory inside allocated fixed-size page frames.\n- External Fragmentation: Total free memory space exists to satisfy request, but contiguous block is unavailable (fixed via compaction).\n- Thrashing: High page-fault frequency causing OS to spend more time swapping pages than executing instructions.",
+"type": "CONCEPT"
+}
+],
+"questions": [
+{
+"q": "Which specialized hardware component converts virtual memory addresses to physical RAM addresses?",
+"options": ["ALU", "Memory Management Unit (MMU)", "Control Unit", "Direct Memory Access (DMA)"],
+"answer": 1,
+"explanation": "The MMU translates logical virtual addresses generated by the CPU into physical RAM addresses.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the high-speed hardware lookup cache used inside the MMU to speed up virtual address translation?",
+"options": ["L1 Cache", "Translation Lookaside Buffer (TLB)", "Page Table Entry", "Disk Buffer"],
+"answer": 1,
+"explanation": "The TLB caches recent virtual-to-physical page table translations to avoid slow multi-level memory lookups.",
+"difficulty": "EASY"
+},
+{
+"q": "What phenomenon describes an increase in page faults when more physical page frames are added under FIFO replacement?",
+"options": ["Thrashing", "Belady's Anomaly", "Priority Inversion", "Convoy Effect"],
+"answer": 1,
+"explanation": "Belady's Anomaly is a counter-intuitive phenomenon where increasing page frames leads to more page faults under FIFO.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What page replacement algorithm replaces the page that will not be used for the longest period of time in the future?",
+"options": ["FIFO", "LRU", "Optimal Page Replacement (OPT)", "LFE"],
+"answer": 2,
+"explanation": "Optimal (OPT / Belady's) algorithm looks into future references, serving as a theoretical benchmark.",
+"difficulty": "EASY"
+},
+{
+"q": "What condition occurs when a system spends more time executing page swapping operations than actual CPU instructions?",
+"options": ["Fragmentation", "Thrashing", "Deadlock", "Cascading Abort"],
+"answer": 1,
+"explanation": "Thrashing occurs when active working-set memory exceeds physical RAM, causing constant page fault thrashing.",
+"difficulty": "EASY"
+},
+{
+"q": "Unused wasted memory space occurring inside a fixed-size allocated page frame is known as:",
+"options": ["External Fragmentation", "Internal Fragmentation", "Compaction", "Segment Fault"],
+"answer": 1,
+"explanation": "Internal Fragmentation occurs when allocated memory blocks (e.g., 4KB page) are larger than requested data payloads.",
+"difficulty": "EASY"
+},
+{
+"q": "What technique eliminates External Fragmentation by shifting allocated memory blocks to consolidate free space into one contiguous block?",
+"options": ["Paging", "Compaction", "Segmentation", "Swapping"],
+"answer": 1,
+"explanation": "Compaction relocates occupied variable-sized segments together to aggregate scattered free memory.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Given a 32-bit virtual address space with a 4 KB ($2^{12}$ bytes) page size, how many total entries exist in a single-level page table?",
+"options": ["$2^{12}$ ($4,096$)", "$2^{20}$ ($1,048,576$)", "$2^{32}$", "$2^{16}$"],
+"answer": 1,
+"explanation": "Page number bits = $32 - 12 = 20$ bits. Total entries = $2^{20} = 1,048,576$ entries.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What event triggers an interrupt to the OS kernel when a program accesses a virtual page not currently loaded in RAM?",
+"options": ["Segmentation Fault", "Page Fault", "General Protection Fault", "Buffer Overflow"],
+"answer": 1,
+"explanation": "A Page Fault interrupt fires when the valid-invalid bit in the page table entry indicates the page is on disk.",
+"difficulty": "EASY"
+},
+{
+"q": "Which memory management scheme divides virtual memory into variable-sized user-centric logical units (e.g., Code, Data, Stack)?",
+"options": ["Paging", "Segmentation", "Fixed Partitioning", "Inverted Paging"],
+"answer": 1,
+"explanation": "Segmentation partitions logical memory into variable-sized functional sections reflecting program structure.",
+"difficulty": "EASY"
+},
+{
+"q": "Least Recently Used (LRU) page replacement replaces the page that has:",
+"options": ["Not been used for the longest period of time in past history", "The lowest page number", "The highest dirty bit value", "Been loaded most recently"],
+"answer": 0,
+"explanation": "LRU evaluates past execution history, evicting the page that has remained untouched for the longest elapsed time.",
+"difficulty": "EASY"
+},
+{
+"q": "What bit in a Page Table Entry indicates whether a page has been modified in memory since being loaded from disk?",
+"options": ["Valid Bit", "Dirty Bit (Modify Bit)", "Reference Bit", "Protection Bit"],
+"answer": 1,
+"explanation": "The Dirty Bit (Modify Bit) tracks whether a page was modified; if set, the page must be written back to disk upon eviction.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "What is the primary advantage of multi-level page tables (e.g., 2-level or 4-level paging)?",
+"options": ["Faster memory translation speed", "Avoids keeping entire huge page tables contiguous in physical memory", "Eliminates TLB misses", "Reduces disk usage"],
+"answer": 1,
+"explanation": "Multi-level paging breaks giant page tables into pageable sub-chunks, avoiding massive contiguous memory allocation for page tables.",
+"difficulty": "HARD"
+},
+{
+"q": "In an Inverted Page Table architecture, the number of entries in the table is proportional to the size of:",
+"options": ["Virtual Memory space", "Physical Memory (RAM)", "Disk Swap space", "Process count"],
+"answer": 1,
+"explanation": "An Inverted Page Table has one entry per physical frame in RAM rather than per virtual page of each process.",
+"difficulty": "HARD"
+},
+{
+"q": "What page replacement algorithm approximates LRU efficiently using a single circular pointer and reference bits?",
+"options": ["FIFO", "Clock Algorithm (Second Chance)", "OPT", "MFU"],
+"answer": 1,
+"explanation": "The Clock algorithm inspects reference bits sequentially in a circular buffer, granting a second chance to referenced pages.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Calculate Effective Access Time (EAT) given: TLB access time = 10ns, RAM access time = 100ns, and TLB hit ratio = 90%.",
+"options": ["120ns", "110ns", "100ns", "210ns"],
+"answer": 0,
+"explanation": "$\text{EAT} = 0.90(10 + 100) + 0.10(10 + 100 + 100) = 0.90(110) + 0.10(210) = 99 + 21 = 120$ns.",
+"difficulty": "HARD"
+},
+{
+"q": "What memory allocation algorithm allocates the first free memory hole that is large enough to satisfy a request?",
+"options": ["Best-Fit", "First-Fit", "Worst-Fit", "Next-Fit"],
+"answer": 1,
+"explanation": "First-Fit scans memory from the beginning and allocates the first available free hole large enough for the payload.",
+"difficulty": "EASY"
+},
+{
+"q": "Which memory allocation strategy allocates the smallest hole that is big enough, producing tiny unusable remaining holes?",
+"options": ["First-Fit", "Best-Fit", "Worst-Fit", "Quick-Fit"],
+"answer": 1,
+"explanation": "Best-Fit searches all free blocks to pick the smallest hole fitting the request, leaving behind tiny leftover memory fragments.",
+"difficulty": "EASY"
+},
+{
+"q": "What is the Working Set Model used for in operating systems?",
+"options": ["Calculating CPU priority", "Tracking a process's active page needs over a time window to prevent thrashing", "Formatting solid state drives", "Compiling C code"],
+"answer": 1,
+"explanation": "The Working Set Model monitors recent memory page references to ensure a process has enough frames in RAM to avoid thrashing.",
+"difficulty": "MEDIUM"
+},
+{
+"q": "Does basic Paging suffer from External Fragmentation?",
+"options": ["Yes, significantly", "No, because memory is allocated in fixed-size pages/frames", "Only when TLB is full", "Only on 64-bit CPUs"],
+"answer": 1,
+"explanation": "Paging eliminates external fragmentation because any free physical frame can be assigned to any virtual page.",
+"difficulty": "MEDIUM"
+}
+]
+}
+]
+}

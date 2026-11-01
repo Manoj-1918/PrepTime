@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: preptime
+      POSTGRES_USER: preptime
+      POSTGRES_PASSWORD: preptime
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U preptime -d preptime"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  ai-service:
+    build: ./ai-service
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
+    ports:
+      - "8000:8000"
+
+  backend:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/preptime
+      DB_USER: preptime
+      DB_PASSWORD: preptime
+      AI_SERVICE_URL: http://ai-service:8000
+    depends_on:
+      db:
+        condition: service_healthy
+      ai-service:
+        condition: service_started
+    restart: on-failure
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  pgdata:

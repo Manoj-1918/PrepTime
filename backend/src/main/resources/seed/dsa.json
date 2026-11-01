@@ -1,0 +1,735 @@
+{
+ "name": "Data Structures & Algorithms",
+ "category": "DSA",
+ "description": "The core of every coding round: patterns, complexity and curated practice problems.",
+ "weight": 40,
+ "sortOrder": 2,
+ "topics": [
+  {
+   "name": "Arrays & Hashing",
+   "estHours": 5,
+   "articles": [
+    {
+     "title": "Arrays and hash maps",
+     "content": "## Core ideas\n- An array gives O(1) access by index; inserting or deleting in the middle is O(n).\n- A **hash map / hash set** gives O(1) average insert, delete and lookup. Reach for it when you need \"have I seen this before?\" or \"how many times?\".\n- **Frequency counting**: count characters or numbers in a map, then compare maps.\n- **Prefix sums**: build `prefix[i] = a[0] + ... + a[i-1]` once in O(n); any range sum is `prefix[r+1] - prefix[l]` in O(1).\n- Sorting first (O(n log n)) often makes duplicates and groups easy to find.\n\n## Patterns\n1. Two Sum style: store the complement you still need while scanning once.\n2. Grouping: use a canonical key (sorted string, count tuple) for each item.\n3. Sets for O(1) membership, for example the longest consecutive sequence.",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What is the average time complexity of a lookup in a hash map?",
+     "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+     ],
+     "answer": 0,
+     "explanation": "With a good hash function, lookups are constant time on average.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "Which approach solves Two Sum on an unsorted array in O(n) time?",
+     "options": [
+      "Sort and use binary search",
+      "One pass with a hash map of seen values",
+      "Nested loops",
+      "Recursion"
+     ],
+     "answer": 1,
+     "explanation": "For each number, check if (target - number) was already seen.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "After an O(n) prefix-sum preprocessing step, how long does a range-sum query take?",
+     "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n^2)"
+     ],
+     "answer": 2,
+     "explanation": "sum(l..r) = prefix[r+1] - prefix[l].",
+     "difficulty": "EASY"
+    }
+   ],
+   "problems": [
+    {
+     "title": "Two Sum",
+     "slug": "two-sum",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Contains Duplicate",
+     "slug": "contains-duplicate",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Valid Anagram",
+     "slug": "valid-anagram",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Group Anagrams",
+     "slug": "group-anagrams",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Top K Frequent Elements",
+     "slug": "top-k-frequent-elements",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Product of Array Except Self",
+     "slug": "product-of-array-except-self",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Longest Consecutive Sequence",
+     "slug": "longest-consecutive-sequence",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    }
+   ]
+  },
+  {
+   "name": "Two Pointers & Sliding Window",
+   "estHours": 5,
+   "articles": [
+    {
+     "title": "Two pointers and sliding window",
+     "content": "## Two pointers\nKeep two indices that move toward each other (or in the same direction) so a nested loop becomes one pass.\n- Sorted array, find a pair with a given sum: move `left` up if the sum is too small, `right` down if too large. **O(n)**.\n- Palindrome check, container with most water, removing duplicates in place.\n- 3Sum: sort, fix one number, run two pointers on the rest. **O(n^2)**.\n\n## Sliding window\nA window `[l, r]` over a contiguous part of an array or string.\n1. Expand `r` and add the new element to your state (count map, sum).\n2. While the window breaks the rule, shrink from `l`.\n3. Record the best window after each step.\n\nUse it for \"longest / shortest / count of subarrays or substrings with a condition\". Each element enters and leaves once, so it is **O(n)**.",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "A sorted array and a target sum: what is the best time complexity to find a pair using two pointers?",
+     "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+     ],
+     "answer": 0,
+     "explanation": "Each pointer moves at most n steps in total.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "Sliding window is best suited for problems about:",
+     "options": [
+      "Contiguous subarrays or substrings with a constraint",
+      "Tree traversal",
+      "Shortest path in a graph",
+      "Sorting linked lists"
+     ],
+     "answer": 0,
+     "explanation": "The window is a contiguous range that grows and shrinks.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "What is the usual time complexity of 3Sum after sorting with the two-pointer approach?",
+     "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(n^3)"
+     ],
+     "answer": 2,
+     "explanation": "One loop over the fixed element times an O(n) two-pointer scan.",
+     "difficulty": "MEDIUM"
+    }
+   ],
+   "problems": [
+    {
+     "title": "Valid Palindrome",
+     "slug": "valid-palindrome",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "3Sum",
+     "slug": "3sum",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Container With Most Water",
+     "slug": "container-with-most-water",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Best Time to Buy and Sell Stock",
+     "slug": "best-time-to-buy-and-sell-stock",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Longest Substring Without Repeating Characters",
+     "slug": "longest-substring-without-repeating-characters",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Longest Repeating Character Replacement",
+     "slug": "longest-repeating-character-replacement",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Minimum Window Substring",
+     "slug": "minimum-window-substring",
+     "difficulty": "HARD",
+     "sheet": "BLIND75"
+    }
+   ]
+  },
+  {
+   "name": "Binary Search",
+   "estHours": 4,
+   "articles": [
+    {
+     "title": "Binary search and its variations",
+     "content": "## Idea\nBinary search halves the search space each step, so it runs in **O(log n)**. It needs a *monotonic* property: sorted data, or a yes/no condition that flips only once.\n\n```\nlo, hi = 0, n - 1\nwhile lo <= hi:\n    mid = lo + (hi - lo) // 2     # avoids integer overflow\n    if a[mid] == target: return mid\n    if a[mid] < target: lo = mid + 1\n    else: hi = mid - 1\n```\n\n## Variations\n- First / last occurrence: keep searching after a match.\n- Rotated sorted array: one half is always sorted, decide which half holds the target.\n- **Binary search on the answer**: search over possible values (for example the smallest eating speed that works) with a `can_do(x)` check.",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What is the time complexity of binary search on a sorted array?",
+     "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+     ],
+     "answer": 1,
+     "explanation": "The search range halves every step.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "Why do we write mid = lo + (hi - lo) / 2 instead of (lo + hi) / 2?",
+     "options": [
+      "It is faster",
+      "It avoids integer overflow",
+      "It rounds up",
+      "It works on unsorted data"
+     ],
+     "answer": 1,
+     "explanation": "lo + hi can exceed the integer limit for large indices.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "Binary search can be applied to an unsorted array if:",
+     "options": [
+      "The array is small",
+      "There is a monotonic condition to search on",
+      "It has duplicates",
+      "It never can"
+     ],
+     "answer": 1,
+     "explanation": "Any yes/no condition that flips once works, even without sorted data.",
+     "difficulty": "MEDIUM"
+    }
+   ],
+   "problems": [
+    {
+     "title": "Binary Search",
+     "slug": "binary-search",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Search a 2D Matrix",
+     "slug": "search-a-2d-matrix",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Koko Eating Bananas",
+     "slug": "koko-eating-bananas",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Find Minimum in Rotated Sorted Array",
+     "slug": "find-minimum-in-rotated-sorted-array",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Search in Rotated Sorted Array",
+     "slug": "search-in-rotated-sorted-array",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    }
+   ]
+  },
+  {
+   "name": "Linked List",
+   "estHours": 5,
+   "articles": [
+    {
+     "title": "Linked lists",
+     "content": "## Basics\n- Singly linked list: each node stores a value and a `next` pointer. Access by position is O(n), insert or delete at a known node is O(1).\n- Use a **dummy head** node to simplify insertion and deletion at the front.\n\n## Must-know techniques\n- **Reverse in place**: keep `prev`, `curr`, `next` and flip pointers, O(n) time and O(1) space.\n- **Fast and slow pointers (Floyd)**: slow moves 1 step, fast moves 2. They meet if there is a cycle; when fast reaches the end, slow is at the middle.\n- **Merge two sorted lists** with a dummy node and a tail pointer.\n- Remove the n-th node from the end: move one pointer n steps ahead, then move both together.",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Which technique detects a cycle in a linked list using O(1) extra space?",
+     "options": [
+      "Hash set of visited nodes",
+      "Floyd's slow and fast pointers",
+      "Sorting the list",
+      "Recursion"
+     ],
+     "answer": 1,
+     "explanation": "The fast pointer eventually catches the slow pointer inside a cycle.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "What is the time to access the k-th element of a singly linked list?",
+     "options": [
+      "O(1)",
+      "O(log n)",
+      "O(k)",
+      "O(n^2)"
+     ],
+     "answer": 2,
+     "explanation": "You must walk k nodes from the head.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "What is the space complexity of reversing a singly linked list in place iteratively?",
+     "options": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+     ],
+     "answer": 0,
+     "explanation": "Only three pointers are needed.",
+     "difficulty": "EASY"
+    }
+   ],
+   "problems": [
+    {
+     "title": "Reverse Linked List",
+     "slug": "reverse-linked-list",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Merge Two Sorted Lists",
+     "slug": "merge-two-sorted-lists",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Linked List Cycle",
+     "slug": "linked-list-cycle",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Reorder List",
+     "slug": "reorder-list",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Remove Nth Node From End of List",
+     "slug": "remove-nth-node-from-end-of-list",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Add Two Numbers",
+     "slug": "add-two-numbers",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Merge k Sorted Lists",
+     "slug": "merge-k-sorted-lists",
+     "difficulty": "HARD",
+     "sheet": "BLIND75"
+    }
+   ]
+  },
+  {
+   "name": "Stack & Queue",
+   "estHours": 4,
+   "articles": [
+    {
+     "title": "Stacks and queues",
+     "content": "## Definitions\n- **Stack**: last in, first out (LIFO). Push, pop and peek are O(1).\n- **Queue**: first in, first out (FIFO). Used for BFS and scheduling.\n- **Deque**: add or remove at both ends in O(1).\n\n## Patterns\n- Matching brackets: push openers, pop on a closer and compare.\n- **Monotonic stack**: keep the stack increasing or decreasing to find the next greater (or smaller) element for every index in O(n) total.\n- Min stack: store the current minimum along with every element.\n- Evaluate expressions: operands on a stack, apply an operator to the top two.",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Which data structure is used to check for balanced parentheses?",
+     "options": [
+      "Queue",
+      "Stack",
+      "Heap",
+      "Graph"
+     ],
+     "answer": 1,
+     "explanation": "The most recent opener must match the next closer, which is LIFO.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "A monotonic stack can solve 'next greater element' for all indices in:",
+     "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+     ],
+     "answer": 0,
+     "explanation": "Every element is pushed and popped at most once.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "BFS uses which data structure to track nodes to visit?",
+     "options": [
+      "Stack",
+      "Queue",
+      "Priority queue",
+      "Array only"
+     ],
+     "answer": 1,
+     "explanation": "A queue visits nodes level by level.",
+     "difficulty": "EASY"
+    }
+   ],
+   "problems": [
+    {
+     "title": "Valid Parentheses",
+     "slug": "valid-parentheses",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Min Stack",
+     "slug": "min-stack",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Daily Temperatures",
+     "slug": "daily-temperatures",
+     "difficulty": "MEDIUM",
+     "sheet": "FREQUENT"
+    },
+    {
+     "title": "Evaluate Reverse Polish Notation",
+     "slug": "evaluate-reverse-polish-notation",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Largest Rectangle in Histogram",
+     "slug": "largest-rectangle-in-histogram",
+     "difficulty": "HARD",
+     "sheet": "BLIND75"
+    }
+   ]
+  },
+  {
+   "name": "Trees",
+   "estHours": 6,
+   "articles": [
+    {
+     "title": "Binary trees and BSTs",
+     "content": "## Basics\n- A binary tree node has at most two children. **Height** is the longest root-to-leaf path.\n- **Binary Search Tree (BST)**: left subtree < node < right subtree. An **inorder traversal gives sorted order**.\n- A balanced tree has height O(log n); a skewed one degrades to O(n).\n\n## Traversals\n- DFS: preorder (node, left, right), inorder (left, node, right), postorder (left, right, node). Recursion or an explicit stack.\n- BFS (level order): use a queue and process one level at a time.\n\n## Typical problems\nDepth of a tree, invert a tree, same tree, validate a BST (carry min and max bounds), lowest common ancestor, path sums. Most are solved by a recursive function that returns information from the left and right subtrees.",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Which traversal of a BST visits keys in sorted order?",
+     "options": [
+      "Preorder",
+      "Inorder",
+      "Postorder",
+      "Level order"
+     ],
+     "answer": 1,
+     "explanation": "Left, node, right visits smaller keys first.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "Level-order traversal of a tree is implemented with a:",
+     "options": [
+      "Stack",
+      "Queue",
+      "Hash map",
+      "Recursion only"
+     ],
+     "answer": 1,
+     "explanation": "A queue processes nodes level by level.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "What is the maximum number of nodes in a binary tree of height h (root at height 0)?",
+     "options": [
+      "2^h",
+      "2^(h+1) - 1",
+      "h^2",
+      "2h + 1"
+     ],
+     "answer": 1,
+     "explanation": "1 + 2 + 4 + ... + 2^h = 2^(h+1) - 1.",
+     "difficulty": "MEDIUM"
+    }
+   ],
+   "problems": [
+    {
+     "title": "Maximum Depth of Binary Tree",
+     "slug": "maximum-depth-of-binary-tree",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Invert Binary Tree",
+     "slug": "invert-binary-tree",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Same Tree",
+     "slug": "same-tree",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Binary Tree Level Order Traversal",
+     "slug": "binary-tree-level-order-traversal",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Validate Binary Search Tree",
+     "slug": "validate-binary-search-tree",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Kth Smallest Element in a BST",
+     "slug": "kth-smallest-element-in-a-bst",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Lowest Common Ancestor of a BST",
+     "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Binary Tree Maximum Path Sum",
+     "slug": "binary-tree-maximum-path-sum",
+     "difficulty": "HARD",
+     "sheet": "BLIND75"
+    }
+   ]
+  },
+  {
+   "name": "Graphs",
+   "estHours": 6,
+   "articles": [
+    {
+     "title": "Graphs: BFS, DFS and topological sort",
+     "content": "## Representation\n- **Adjacency list**: space O(V + E), best for sparse graphs. **Adjacency matrix**: O(V^2).\n- Grids are graphs too: each cell connects to its 4 (or 8) neighbours.\n\n## Traversals\n- **DFS** (stack or recursion): explore as deep as possible. Used for connected components, cycle detection, flood fill.\n- **BFS** (queue): explore layer by layer. Gives the **shortest path in an unweighted graph**.\n- Always keep a `visited` set so each node is processed once. Time is O(V + E).\n\n## Topological sort\nFor a directed acyclic graph (DAG), order nodes so every edge goes forward. Use Kahn's algorithm (BFS with in-degrees) or DFS post-order. If the order has fewer nodes than the graph, there is a cycle. This solves \"course schedule\" style problems.",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Which traversal finds the shortest path in an unweighted graph?",
+     "options": [
+      "DFS",
+      "BFS",
+      "Inorder",
+      "Binary search"
+     ],
+     "answer": 1,
+     "explanation": "BFS reaches nodes in increasing distance.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "What is the space used by an adjacency list?",
+     "options": [
+      "O(V)",
+      "O(E)",
+      "O(V + E)",
+      "O(V^2)"
+     ],
+     "answer": 2,
+     "explanation": "One list per vertex plus one entry per edge.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "Topological ordering exists only for:",
+     "options": [
+      "Any undirected graph",
+      "Directed acyclic graphs",
+      "Complete graphs",
+      "Trees only"
+     ],
+     "answer": 1,
+     "explanation": "A cycle makes it impossible to place every edge forward.",
+     "difficulty": "EASY"
+    }
+   ],
+   "problems": [
+    {
+     "title": "Number of Islands",
+     "slug": "number-of-islands",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Max Area of Island",
+     "slug": "max-area-of-island",
+     "difficulty": "MEDIUM",
+     "sheet": "FREQUENT"
+    },
+    {
+     "title": "Clone Graph",
+     "slug": "clone-graph",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Course Schedule",
+     "slug": "course-schedule",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Pacific Atlantic Water Flow",
+     "slug": "pacific-atlantic-water-flow",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Rotting Oranges",
+     "slug": "rotting-oranges",
+     "difficulty": "MEDIUM",
+     "sheet": "FREQUENT"
+    }
+   ]
+  },
+  {
+   "name": "Dynamic Programming",
+   "estHours": 8,
+   "articles": [
+    {
+     "title": "Dynamic programming",
+     "content": "## When to use it\nA problem fits DP when it has **overlapping subproblems** (the same smaller question is asked again and again) and **optimal substructure** (the best answer is built from best answers of smaller parts).\n\n## Recipe\n1. Define the state: what does `dp[i]` (or `dp[i][j]`) mean in words?\n2. Write the transition: how does the state depend on smaller states?\n3. Set the base cases.\n4. Choose the order: memoized recursion (top-down) or a loop (bottom-up).\n5. Optimise space when only the last few states are needed.\n\n## Classic examples\n- Climbing stairs: `dp[n] = dp[n-1] + dp[n-2]`\n- House robber: `dp[i] = max(dp[i-1], dp[i-2] + nums[i])`\n- Coin change: `dp[a] = min(dp[a - c] + 1)` over all coins c\n- LCS: if characters match `dp[i][j] = dp[i-1][j-1] + 1`, else `max(dp[i-1][j], dp[i][j-1])`",
+     "type": "CONCEPT"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Which two properties make a problem suitable for dynamic programming?",
+     "options": [
+      "Sorted input and unique values",
+      "Overlapping subproblems and optimal substructure",
+      "Recursion and loops",
+      "Graph and tree structure"
+     ],
+     "answer": 1,
+     "explanation": "Both are needed to reuse stored sub-answers.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "What is the time complexity of Fibonacci with memoization?",
+     "options": [
+      "O(2^n)",
+      "O(n^2)",
+      "O(n)",
+      "O(log n)"
+     ],
+     "answer": 2,
+     "explanation": "Each value from 0 to n is computed once.",
+     "difficulty": "EASY"
+    },
+    {
+     "q": "The number of ways to climb n stairs (1 or 2 steps at a time) follows which recurrence?",
+     "options": [
+      "f(n) = f(n-1) * f(n-2)",
+      "f(n) = f(n-1) + f(n-2)",
+      "f(n) = 2 * f(n-1)",
+      "f(n) = n + f(n-1)"
+     ],
+     "answer": 1,
+     "explanation": "The last step was either 1 stair or 2 stairs.",
+     "difficulty": "MEDIUM"
+    }
+   ],
+   "problems": [
+    {
+     "title": "Climbing Stairs",
+     "slug": "climbing-stairs",
+     "difficulty": "EASY",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "House Robber",
+     "slug": "house-robber",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Maximum Subarray",
+     "slug": "maximum-subarray",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Coin Change",
+     "slug": "coin-change",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Longest Increasing Subsequence",
+     "slug": "longest-increasing-subsequence",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Longest Common Subsequence",
+     "slug": "longest-common-subsequence",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Word Break",
+     "slug": "word-break",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    },
+    {
+     "title": "Combination Sum",
+     "slug": "combination-sum",
+     "difficulty": "MEDIUM",
+     "sheet": "BLIND75"
+    }
+   ]
+  }
+ ]
+}
